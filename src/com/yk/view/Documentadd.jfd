@@ -1,0 +1,183 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0, 50:1.0, 93, 50, 36, 207, 35, 94, 322, 62:1.0"
+			"$rowSpecs": "37, 44, 36, 35, 9, 30, 12, 35, 13, 37, 13, 182, 34"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"font": &Font0 new java.awt.Font( "宋体", 0, 20 )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Submit"
+				"text": "确认"
+				"font": new java.awt.Font( "宋体", 0, 20 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SubmitActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 1
+				"gridwidth": 2
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Reset"
+				"text": "重置"
+				"font": new java.awt.Font( "宋体", 0, 20 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ResetActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"gridx": 7
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LDocumentcoding"
+				"text": "文档编码"
+				"font": &Font1 new java.awt.Font( "宋体", 0, 20 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 3
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TDocumentcoding"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 3
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LPersonliable"
+				"text": "责任人"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+				"gridy": 3
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TPersonliable"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"gridy": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LTheme"
+				"text": "题名"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 5
+				"gridx": 2
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TTheme"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 5
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LTitle"
+				"text": "文件名"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+				"gridy": 5
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TTitle"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"gridy": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LThenumberofpages"
+				"text": "页数"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 7
+				"gridx": 2
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TThenumberofpages"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 7
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LArchivalyear"
+				"text": "归档年"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+				"gridy": 7
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TArchivalyear"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"gridy": 7
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LStorageposition"
+				"text": "存放位置"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 9
+				"gridx": 2
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TStorageposition"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 9
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LCreatetime"
+				"text": "创建时间"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+				"gridy": 9
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "TCreatetime"
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"gridy": 9
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LRemarks"
+				"text": "备注"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 11
+				"gridx": 2
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "TRemarks"
+					"font": #Font0
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 11
+				"gridwidth": 6
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 782, 480 )
+		} )
+	}
+}

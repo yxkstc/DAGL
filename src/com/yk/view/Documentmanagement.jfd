@@ -1,0 +1,79 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0, 0, 712:1.0"
+			"$rowSpecs": "0, 0, 0, 295:1.0"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "0:1.0"
+				"$rowSpecs": "0"
+				"$hGap": 5
+				"$vGap": 5
+				"$alignLeft": true
+				"$alignTop": true
+			} ) {
+				name: "panel1"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridwidth": 3
+			} )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tablePanemail"
+				"font": new java.awt.Font( "宋体", 0, 20 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridwidth": 3
+				"gridheight": 3
+				"gridy": 1
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "SystemmenuKJ"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "SystemmenuM"
+					"text": "系统菜单"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Signout"
+						"text": "退出"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SignoutActionPerformed", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SignoutActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "Dmanagement"
+					"text": "文档管理"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Dnewadd"
+						"text": "新增"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DnewaddActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Dquery"
+						"text": "查询"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DqueryActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Batchimport"
+						"text": "EXECL导入"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "BatchimportActionPerformed", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 634, 370 )
+		} )
+	}
+}
+

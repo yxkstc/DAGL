@@ -1,0 +1,81 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "12, 95, 0, 104:1.0, 46, 0"
+			"$rowSpecs": "0, 0, 196:1.0, 0"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+				"gridy": 1
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 1
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTree" ) {
+					name: "tree2"
+					"font": new java.awt.Font( "宋体", 0, 20 )
+					addEvent( new FormEvent( "javax.swing.event.TreeExpansionListener", "treeCollapsed", "tree2TreeCollapsed", true ) )
+					addEvent( new FormEvent( "javax.swing.event.TreeExpansionListener", "treeExpanded", "tree2TreeExpanded", true ) )
+					addEvent( new FormEvent( "javax.swing.event.TreeSelectionListener", "valueChanged", "tree2ValueChanged", true ) )
+					addEvent( new FormEvent( "javax.swing.event.TreeWillExpandListener", "treeWillCollapse", "tree2TreeWillCollapse", true ) )
+					addEvent( new FormEvent( "javax.swing.event.TreeWillExpandListener", "treeWillExpand", "tree2TreeWillExpand", true ) )
+					addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "tree2PropertyChange", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "tree2MouseClicked", true ) )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+				"gridy": 2
+				"gridwidth": 2
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane3"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"columnSelectionAllowed": true
+					"cellSelectionEnabled": true
+					"font": new java.awt.Font( "宋体", 0, 20 )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 2
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Confirm"
+				"text": "确认"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ConfirmActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 4
+				"gridy": 3
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Cancel"
+				"text": "取消"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "CancelActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+				"gridy": 3
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 325 )
+		} )
+	}
+}
