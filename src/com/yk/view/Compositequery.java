@@ -98,11 +98,9 @@ public class Compositequery extends JFrame {
         }else{
             Dlysql="1=1";
         }
-        List<DocumentManagement> list=new com.yk.dao.DocumentManagementDao().CombinationQuery(Dlysql);
-
+        List<DocumentManagement> list= new com.yk.dao.DocumentManagementDao().CombinationQuery(Dlysql);
         this.dispose();
-        Documentquery dq=new Documentquery();
-        dq.setArchivesquery(GuiVerification.queryTableModel(list));
+        Documentquery.setArchivesquery(GuiVerification.queryTableModel(list));
 
     }
     //取消事件

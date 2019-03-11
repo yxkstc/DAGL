@@ -5,6 +5,7 @@ import com.yk.model.DocumentManagement;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -36,13 +37,22 @@ public class GuiVerification {
             data[i][7]=list.get(i).getRemarks();
             data[i][8]=list.get(i).getCreatetime();
         }
-        DefaultTableModel tableModel=new DefaultTableModel(data,head);
+        DefaultTableModel tableModel=new DefaultTableModel(data,head){//设置第一列不能编辑
+            @Override
+            public boolean isCellEditable(int row,int column){
+                if (column == 0) {
+                    return false;
+                }else {
+                    return true;
+                }
+
+            }
+        };
         return tableModel;
     }
 
-    public static List<DocumentManagement>  GetModel(JTable table){
-        System.out.println(table.getValueAt(0,0));
-        List<DocumentManagement> list = null;
+    public  List<DocumentManagement>  GetModel(JTable table){
+        List<DocumentManagement> list = new ArrayList<>();
         for (int i=0;i<table.getRowCount();i++){
             DocumentManagement DM=new DocumentManagement();
             DM.setDocumentcoding(table.getValueAt(i,0));
@@ -58,8 +68,23 @@ public class GuiVerification {
         }
         return list;
    }
-
-
+    //批量修改
+    public void updateData(JTable table){
+        List<DocumentManagement> list = null;
+        for (int i=0;i<table.getRowCount();i++){
+            DocumentManagement DM=new DocumentManagement();
+            DM.setDocumentcoding(table.getValueAt(i,0));
+            DM.setPersonliable(table.getValueAt(i,1));
+            DM.setTheme(table.getValueAt(i,2));
+            DM.setTitle(table.getValueAt(i,3));
+            DM.setThenumberofpages(table.getValueAt(i,4));
+            DM.setArchivalyear(table.getValueAt(i,5));
+            DM.setStorageposition(table.getValueAt(i,6));
+            DM.setRemarks(table.getValueAt(i,7));
+            DM.setCreatetime(table.getValueAt(i,8));
+            new DocumentManagementDao().update(DM);
+        }
+    }
 
 
 }

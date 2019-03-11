@@ -18,7 +18,6 @@ public class BaseDao {
 
     //query-11.传入属性名 拼接set方法
     public static String getSetter(String fieldName) {
-
         return "set" + fieldName.substring(0, 1).toUpperCase( ) + fieldName.substring(1);
     }
 
@@ -99,13 +98,14 @@ public class BaseDao {
             con = JDBCUtils.getConnection( );
             // update-2创建执行命令的stmt对象
             pstmt = con.prepareStatement(sql);
+            //System.out.println( sql);打印sql检查错误
             // update-3参数元数据： 得到占位符参数的个数
-            int count = pstmt.getParameterMetaData( ).getParameterCount( );
+            //int count = pstmt.getParameterMetaData().getParameterCount( );
             // update-4设置占位符参数的值
             if (paramsValue != null && paramsValue.length > 0) {
                 // update-循环给参数赋值
-                for (int i = 0; i < count; i++) {
-                    pstmt.setObject(i, paramsValue[i].toString());
+                for (int i = 0; i < paramsValue.length; i++) {
+                    pstmt.setObject(i+1, paramsValue[i].toString());
                 }
             }
             // update-5执行更新

@@ -7,9 +7,9 @@ import java.util.List;
 public class DocumentManagementDao extends BaseDao {
 
     // 删除
-    public void delete(String userId) {
-        String sql = "delete from Y_PM_User where id=?";
-        Object[] paramsValue = {userId};
+    public void delete(String Documentcoding) {
+        String sql = "delete from DocumentManagement where Documentcoding=?";
+        Object[] paramsValue = {Documentcoding};
         super.update(sql, paramsValue);
     }
 
@@ -20,7 +20,7 @@ public class DocumentManagementDao extends BaseDao {
         super.update(sql, paramsValue);
     }
 
-     // 查询全部
+    // 查询全部
     public List<DocumentManagement> getAll(){
         String sql = "select * from DocumentManagement";
         List<DocumentManagement> list = super.query(sql, null, DocumentManagement.class);
