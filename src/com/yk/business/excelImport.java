@@ -60,7 +60,7 @@ public class excelImport {
     }
 
     /**
-     * 写入Excel表格内容
+     * table写入Excel表格内容
      * @throws FileNotFoundException
      * @throws IOException
      */
@@ -74,7 +74,6 @@ public class excelImport {
         TableModel savetable =table;//输出数据源（流程超时表）
         Sheet sheet1 = workbook.createSheet("sheet1");//创建 sheet1 对象
         Row row = sheet1.createRow(0);//创建sheet1第一行标题对象
-        Row row1;//创建sheet1表行对象
         //shee1标题赋值
         row.createCell(0).setCellValue(savetable.getColumnName(0));
         row.createCell(1).setCellValue(savetable.getColumnName(1));
@@ -87,22 +86,24 @@ public class excelImport {
         row.createCell(8).setCellValue(savetable.getColumnName(8));
 
         //数据源（流程超时表）遍历
-        for (int i = 1;i <savetable.getRowCount(); i++) {
+        for (int i = 0;i <savetable.getRowCount(); i++) {
             //因为sheet1第一行已经设置了，所以从第二行开始
-            row1 = sheet1.createRow(i);
+            row = sheet1.createRow(i+1);
             //写入sheet1行数据
-            row1.createCell(0).setCellValue(savetable.getValueAt(i,0).toString());
-            row1.createCell(1).setCellValue(savetable.getValueAt(i,1).toString());
-            row1.createCell(2).setCellValue(savetable.getValueAt(i,2).toString());
-            row1.createCell(3).setCellValue(savetable.getValueAt(i,3).toString());
-            row1.createCell(4).setCellValue(savetable.getValueAt(i,4).toString());
-            row1.createCell(5).setCellValue(savetable.getValueAt(i,5).toString());
-            row1.createCell(6).setCellValue(savetable.getValueAt(i,6).toString());
-            row1.createCell(7).setCellValue(savetable.getValueAt(i,7).toString());
-            row1.createCell(8).setCellValue(savetable.getValueAt(i,8).toString());
+            row.createCell(0).setCellValue(savetable.getValueAt(i,0).toString());
+            row.createCell(1).setCellValue(savetable.getValueAt(i,1).toString());
+            row.createCell(2).setCellValue(savetable.getValueAt(i,2).toString());
+            row.createCell(3).setCellValue(savetable.getValueAt(i,3).toString());
+            row.createCell(4).setCellValue(savetable.getValueAt(i,4).toString());
+            row.createCell(5).setCellValue(savetable.getValueAt(i,5).toString());
+            row.createCell(6).setCellValue(savetable.getValueAt(i,6).toString());
+            row.createCell(7).setCellValue(savetable.getValueAt(i,7).toString());
+            row.createCell(8).setCellValue(savetable.getValueAt(i,8).toString());
         }
         FileOutputStream fos = new FileOutputStream(str);
         workbook.write(fos);//写文件
         fos.close();
     }
+
+
 }

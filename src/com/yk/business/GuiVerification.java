@@ -12,6 +12,7 @@ import org.dom4j.io.SAXReader;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,7 +33,6 @@ public class GuiVerification {
     public static DefaultTableModel queryTableModel(List table) {
         Object[][] data=null;
         List<DocumentManagement> list=table;
-        String head[]=new String[]{"档案号","责任人","主题","题名","页数","日期","存储位置","备注","创建时间"};
         data=new Object[list.size()][9];
         for(int i=0;i<list.size();i++){
             data[i][0]=list.get(i).getDocumentcoding();
@@ -45,7 +45,7 @@ public class GuiVerification {
             data[i][7]=list.get(i).getRemarks();
             data[i][8]=list.get(i).getCreatetime();
         }
-        DefaultTableModel tableModel=new DefaultTableModel(data,head){//设置第一列不能编辑
+        DefaultTableModel tableModel=new DefaultTableModel(data,getHead()){//设置第一列不能编辑
             @Override
             public boolean isCellEditable(int row,int column){
                 if (column == 0) {
@@ -77,9 +77,7 @@ public class GuiVerification {
         return list;
    }
     //批量修改
-    public void updateData(JTable table){
-        List<DocumentManagement> list = null;
-        for (int i=0;i<table.getRowCount();i++){
+    public DocumentManagement updateData(JTable table,int i){
             DocumentManagement DM=new DocumentManagement();
             DM.setDocumentcoding(table.getValueAt(i,0));
             DM.setPersonliable(table.getValueAt(i,1));
@@ -90,8 +88,7 @@ public class GuiVerification {
             DM.setStorageposition(table.getValueAt(i,6));
             DM.setRemarks(table.getValueAt(i,7));
             DM.setCreatetime(table.getValueAt(i,8));
-            new DocumentManagementDao().update(DM);
-        }
+            return DM;
     }
 
     //获取当前时间
@@ -195,6 +192,32 @@ public class GuiVerification {
             return Boolean.parseBoolean(value);
         }
         return value;
+    }
+
+    //返回list
+
+    public DefaultTableModel selectTabel(int[] row, JTable table){
+        Object[][] data=new Object[row.length][9];
+
+        for (int i=0;i<row.length;i++){
+            data[i][0]=table.getValueAt(row[i],0);
+            data[i][1]=table.getValueAt(row[i],1);
+            data[i][2]=table.getValueAt(row[i],2);
+            data[i][3]=table.getValueAt(row[i],3);
+            data[i][4]=table.getValueAt(row[i],4);
+            data[i][5]=table.getValueAt(row[i],5);
+            data[i][6]=table.getValueAt(row[i],6);
+            data[i][7]=table.getValueAt(row[i],7);
+            data[i][8]=table.getValueAt(row[i],8);
+        }
+
+        DefaultTableModel tableModel=new DefaultTableModel(data,getHead());
+        return tableModel;
+    }
+
+    //档案表头
+    public static  final String[] getHead(){
+        return new String[]{"档案号","责任人","主题","题名","页数","日期","存储位置","备注","创建时间"};
     }
 
 

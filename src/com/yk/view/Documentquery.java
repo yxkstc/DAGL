@@ -107,7 +107,8 @@ public class Documentquery extends JPanel {
         //增加右键菜单
         Archivesquery.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                mouseRightButtonClick(evt);
+                //jTable1MouseClicked(evt);
             }
         });
         jp.setName("档案查询");
@@ -129,14 +130,21 @@ public class Documentquery extends JPanel {
     private void ConfirmActionEdit(ActionEvent e){
         //Archivesquery.getRowCount();
         try {
-            List<DocumentManagement> list =new GuiVerification().GetModel(Archivesquery);
-            for (int i=0;i<list.size();i++){
-                new DocumentManagementDao().update(list.get(i));
+            int rows[]=Archivesquery.getSelectedRows();
+            if (Archivesquery.getSelectedRow() == -1) {
+                JOptionPane.showMessageDialog(null,"请选中需要修改的数据");
+            }else {
+                for(int i=0;i<rows.length;i++){
+                    DocumentManagementDao dd =new DocumentManagementDao();
+                    dd.update(new GuiVerification().updateData(Archivesquery,rows[i]));
+                }
+                JOptionPane.showMessageDialog(null,"修改成功");
+                setArchivesquery(GuiVerification.queryTableModel(new DocumentManagementDao().getAll()));//刷新JTable
             }
-            JOptionPane.showMessageDialog(null,"修改成功");
-        } catch (Exception e1) {
-            e1.printStackTrace( );
-            JOptionPane.showMessageDialog(null,e1.getMessage());
+
+        } catch (HeadlessException e1) {
+            e1.printStackTrace();
+            JOptionPane.showMessageDialog(null, e1.getMessage());//弹出异常消息
         }
 
     }
@@ -186,7 +194,8 @@ public class Documentquery extends JPanel {
         //导出全部
         exportAllMenItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {//该操作需要做的事
-
+              //文件路径为空，不做任何操作
+                if (initSaveingfiles()==null) return;//此代码防止点击关闭报文件路径错误
                 try {
                     //调用导出功能
                     new excelImport().writeExcel(initSaveingfiles(),Archivesquery.getModel());
@@ -200,10 +209,20 @@ public class Documentquery extends JPanel {
         });
         //导出选中
         exportMenItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //该操作需要做的事
-                Archivesquery.getSelectionModel();
-                System.out.println("选中数据导出execl" );
+            public void actionPerformed(java.awt.event.ActionEvent evt) {//该操作需要做的事
+                //文件路径为空，不做任何操作
+                if (initSaveingfiles()==null) return;//此代码防止点击关闭报文件路径错误
+                try {
+                    //调用导出功能
+                    int rows[]=Archivesquery.getSelectedRows();
+                    new excelImport().writeExcel(initSaveingfiles(),new GuiVerification().selectTabel(rows,Archivesquery));
+                    JOptionPane.showMessageDialog(null,"导出成功");
+                } catch (IOException e) {
+                    e.printStackTrace( );
+                    JOptionPane.showMessageDialog(null,e.getMessage());
+                }
+
+
             }
         });
         m_popupMenu.add(exportAllMenItem);
@@ -213,22 +232,23 @@ public class Documentquery extends JPanel {
 
 
     //添加JPopupMenu事件到Archivesquery(JTable)监听
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
-        mouseRightButtonClick(evt);
-    }
+  /*  private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+
+    }*/
 
     //鼠标右键点击事件
     private void mouseRightButtonClick(java.awt.event.MouseEvent evt) {
         //判断是否为鼠标的BUTTON3按钮，BUTTON3为鼠标右键
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
-            //通过点击位置找到点击为表格中的行
+            //选中行点击右键，在数据范围且鼠标位置显示右键菜单。未选中数据无法触发右键菜单
             int focusedRowIndex = Archivesquery.rowAtPoint(evt.getPoint());
-            if (focusedRowIndex == -1) {
+            if (focusedRowIndex == -1 ||Archivesquery.getSelectedRow()==-1) {
                 return;
             }
             //将表格所选项设为当前右键点击的行
-            Archivesquery.setRowSelectionInterval(focusedRowIndex, focusedRowIndex);
+            //Archivesquery.setRowSelectionInterval(focusedRowIndex, focusedRowIndex);
             //弹出菜单
+
             m_popupMenu.show(Archivesquery, evt.getX(), evt.getY());
         }
 
@@ -239,7 +259,7 @@ public class Documentquery extends JPanel {
      */
     private String  initSaveingfiles() {
         String path=null;
-        String defaultDisk=new GuiVerification().nowtime()+".xls";
+        String defaultDisk="档案管理"+new GuiVerification().nowtime()+".xls";
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel 97-2003文件","xls");
         chooser.setDialogTitle("请选择要保存的路径...");
         chooser.setApproveButtonText("保存");
