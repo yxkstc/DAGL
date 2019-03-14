@@ -7,13 +7,17 @@ package com.yk.view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import com.yk.business.GuiVerification;
+import com.yk.business.excelImport;
 import com.yk.dao.DocumentManagementDao;
 import com.yk.model.DocumentManagement;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,6 +30,17 @@ public class Documentquery extends JPanel {
         Bquery = new JButton();
         Bedit = new JButton();
         Bdelete=new JButton();
+        m_popupMenu = new JPopupMenu();
+        exportAllMenItem = new JMenuItem();
+        exportMenItem = new JMenuItem();
+        chooser=new JFileChooser();
+        m_popupMenu.setFont(new Font("宋体", Font.PLAIN, 15));
+        exportAllMenItem.setText("全部导出execl");
+        exportAllMenItem.setFont(new Font("宋体", Font.PLAIN, 15));
+        exportMenItem.setText("选中数据导出execl");
+        exportMenItem.setFont(new Font("宋体", Font.PLAIN, 15));
+        //创建JPopupMenu
+        createPopupMenu();
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         separator1 = new JSeparator();
         scrollPane1 = new JScrollPane();
@@ -79,7 +94,7 @@ public class Documentquery extends JPanel {
         gbc.insets.bottom = 5;
         jp.add(separator1, gbc);
 
-        Archivesquery.setFont(new Font("宋体", Font.PLAIN, 14)); //NON-NLS
+        Archivesquery.setFont(new Font("宋体", Font.PLAIN, 15)); //NON-NLS
         scrollPane1.setViewportView(Archivesquery);
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -89,8 +104,15 @@ public class Documentquery extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
         jp.add(scrollPane1, gbc);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+        //增加右键菜单
+        Archivesquery.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jp.setName("档案查询");
         setArchivesquery(GuiVerification.queryTableModel(new DocumentManagementDao().getAll()));
+
         return jp;
     }
     //查询面板
@@ -130,9 +152,10 @@ public class Documentquery extends JPanel {
                        DocumentManagementDao dd =new DocumentManagementDao();
                        dd.delete(Archivesquery.getValueAt(rows[i],0).toString());
                    }
+                JOptionPane.showMessageDialog(null,"删除成功");
+                setArchivesquery(GuiVerification.queryTableModel(new DocumentManagementDao().getAll()));//刷新JTable
             }
-            JOptionPane.showMessageDialog(null,"删除成功");
-            setArchivesquery(GuiVerification.queryTableModel(new DocumentManagementDao().getAll()));//刷新JTable
+
         } catch (HeadlessException e1) {
             e1.printStackTrace();
             JOptionPane.showMessageDialog(null, e1.getMessage());//弹出异常消息
@@ -148,11 +171,92 @@ public class Documentquery extends JPanel {
     private JButton Bedit;
     private JButton Bdelete;
     private static JTable Archivesquery;
+    private JPopupMenu m_popupMenu;
+    private JMenuItem exportAllMenItem;
+    private JMenuItem exportMenItem;
+    private JFileChooser chooser;
 
     //查询面板反写JTable值
     public  static void setArchivesquery(DefaultTableModel tableModel) {
         Archivesquery.setModel(tableModel);
     }
+
+    //创建JPopupMenu事件
+    private void createPopupMenu() {
+        //导出全部
+        exportAllMenItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {//该操作需要做的事
+
+                try {
+                    //调用导出功能
+                    new excelImport().writeExcel(initSaveingfiles(),Archivesquery.getModel());
+                    JOptionPane.showMessageDialog(null,"导出成功");
+                } catch (IOException e) {
+                    e.printStackTrace( );
+                    JOptionPane.showMessageDialog(null,e.getMessage());
+                }
+
+            }
+        });
+        //导出选中
+        exportMenItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                //该操作需要做的事
+                Archivesquery.getSelectionModel();
+                System.out.println("选中数据导出execl" );
+            }
+        });
+        m_popupMenu.add(exportAllMenItem);
+        m_popupMenu.add(exportMenItem);
+
+    }
+
+
+    //添加JPopupMenu事件到Archivesquery(JTable)监听
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+        mouseRightButtonClick(evt);
+    }
+
+    //鼠标右键点击事件
+    private void mouseRightButtonClick(java.awt.event.MouseEvent evt) {
+        //判断是否为鼠标的BUTTON3按钮，BUTTON3为鼠标右键
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            //通过点击位置找到点击为表格中的行
+            int focusedRowIndex = Archivesquery.rowAtPoint(evt.getPoint());
+            if (focusedRowIndex == -1) {
+                return;
+            }
+            //将表格所选项设为当前右键点击的行
+            Archivesquery.setRowSelectionInterval(focusedRowIndex, focusedRowIndex);
+            //弹出菜单
+            m_popupMenu.show(Archivesquery, evt.getX(), evt.getY());
+        }
+
+    }
+
+    /**
+     * @initUploadingfiles 初始化上传事件，获取选择文件路径
+     */
+    private String  initSaveingfiles() {
+        String path=null;
+        String defaultDisk=new GuiVerification().nowtime()+".xls";
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel 97-2003文件","xls");
+        chooser.setDialogTitle("请选择要保存的路径...");
+        chooser.setApproveButtonText("保存");
+        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//只能选文件夹
+        chooser.setSelectedFile(new File(defaultDisk));//设置默认文件名
+        chooser.setFileFilter(filter);//设置文件类型
+        if (JFileChooser.FILES_ONLY == chooser.showOpenDialog(this)) {
+            path=chooser.getSelectedFile().getPath();
+
+        }
+
+        return path;
+    }
+
+
+
+
 }
 
 

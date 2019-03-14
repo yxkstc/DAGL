@@ -4,12 +4,17 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.yk.model.DocumentManagement;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import javax.swing.table.TableModel;
+
 /**
  *
  * Title: excelTest
@@ -59,45 +64,45 @@ public class excelImport {
      * @throws FileNotFoundException
      * @throws IOException
      */
-   /* @SuppressWarnings({ "resource", "rawtypes", "unchecked" })
-    private static void writeExcel(String str) throws FileNotFoundException, IOException{
-        File file=new File(str);
+    @SuppressWarnings({ "resource", "rawtypes", "unchecked" })
+    public  void writeExcel(String str,TableModel table) throws FileNotFoundException, IOException{
         // HSSFWorkbook 2003的excel .xls,XSSFWorkbook导入2007的excel   .xlsx
-//      HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
-        XSSFWorkbook workbook=new XSSFWorkbook(new FileInputStream(file));
-        List resultList =new ArrayList<>();
+        //HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
+        //XSSFWorkbook workbook=new XSSFWorkbook(new FileInputStream(file));
+        //InputStream is = new FileInputStream(file);
+        HSSFWorkbook workbook=new HSSFWorkbook();//定义输出方式为xls2003
+        TableModel savetable =table;//输出数据源（流程超时表）
+        Sheet sheet1 = workbook.createSheet("sheet1");//创建 sheet1 对象
+        Row row = sheet1.createRow(0);//创建sheet1第一行标题对象
+        Row row1;//创建sheet1表行对象
+        //shee1标题赋值
+        row.createCell(0).setCellValue(savetable.getColumnName(0));
+        row.createCell(1).setCellValue(savetable.getColumnName(1));
+        row.createCell(2).setCellValue(savetable.getColumnName(2));
+        row.createCell(3).setCellValue(savetable.getColumnName(3));
+        row.createCell(4).setCellValue(savetable.getColumnName(4));
+        row.createCell(5).setCellValue(savetable.getColumnName(5));
+        row.createCell(6).setCellValue(savetable.getColumnName(6));
+        row.createCell(7).setCellValue(savetable.getColumnName(7));
+        row.createCell(8).setCellValue(savetable.getColumnName(8));
 
-        Sheet sheet1 = workbook.createSheet();//创建 sheet 对象
-        Row row = sheet1.createRow(0);//第一行，标题
-        row.createCell(0).setCellValue("A");
-        row.createCell(1).setCellValue("B");
-        row.createCell(2).setCellValue("C");
-        row.createCell(3).setCellValue("D");
-        row.createCell(4).setCellValue("E");
-        //拼接数据
-        for(int i=1;i<=10;i++){
-            *//*JSONObject json1=new JSONObject();
-            json1.put("A", i);
-            json1.put("B", i*2);
-            json1.put("C", i*3);
-            json1.put("D", i*4);
-            json1.put("E", i*5);
-            resultList.add(json1);*//*
+        //数据源（流程超时表）遍历
+        for (int i = 1;i <savetable.getRowCount(); i++) {
+            //因为sheet1第一行已经设置了，所以从第二行开始
+            row1 = sheet1.createRow(i);
+            //写入sheet1行数据
+            row1.createCell(0).setCellValue(savetable.getValueAt(i,0).toString());
+            row1.createCell(1).setCellValue(savetable.getValueAt(i,1).toString());
+            row1.createCell(2).setCellValue(savetable.getValueAt(i,2).toString());
+            row1.createCell(3).setCellValue(savetable.getValueAt(i,3).toString());
+            row1.createCell(4).setCellValue(savetable.getValueAt(i,4).toString());
+            row1.createCell(5).setCellValue(savetable.getValueAt(i,5).toString());
+            row1.createCell(6).setCellValue(savetable.getValueAt(i,6).toString());
+            row1.createCell(7).setCellValue(savetable.getValueAt(i,7).toString());
+            row1.createCell(8).setCellValue(savetable.getValueAt(i,8).toString());
         }
-        Row row1;
-        for (int i = 1, len = resultList.size(); i <=len; i++) {//循环创建数据行
-            //因为第一行已经设置了，所以从第二行开始
-          *//*  row1 = sheet1.createRow(i);
-            JSONObject json=(JSONObject) resultList.get(i-1);
-            row1.createCell(0).setCellValue(json.getString("A"));
-            row1.createCell(1).setCellValue(json.getString("B"));
-            row1.createCell(2).setCellValue(json.getString("C"));
-            row1.createCell(3).setCellValue(json.getString("D"));
-            row1.createCell(4).setCellValue(json.getString("E"));*//*
-        }
-        *//*FileOutputStream fos = new FileOutputStream(path1);
+        FileOutputStream fos = new FileOutputStream(str);
         workbook.write(fos);//写文件
         fos.close();
-        System.out.println("写入成功！");*//*
-    }*/
+    }
 }
