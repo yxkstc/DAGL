@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a5351aa-2333-4442-98db-a4ec17fa54b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/yk/model/Column.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/yk/model/XmlTableModel.java" />
+    <list default="true" id="5a5351aa-2333-4442-98db-a4ec17fa54b9" name="Default" comment="公司电脑2019.3.15 15:27">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/yk/view/Mail.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/business/GuiVerification.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/business/GuiVerification.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/dao/DocumentManagementDao.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/dao/DocumentManagementDao.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentadd.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentadd.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/business/excelImport.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/business/excelImport.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Compositequery.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Compositequery.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentmanagement.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentmanagement.class" />
       <change beforePath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentquery.class" afterPath="$PROJECT_DIR$/out/production/DAGL/com/yk/view/Documentquery.class" />
       <change beforePath="$PROJECT_DIR$/src/com/yk/business/GuiVerification.java" afterPath="$PROJECT_DIR$/src/com/yk/business/GuiVerification.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/yk/business/excelImport.java" afterPath="$PROJECT_DIR$/src/com/yk/business/excelImport.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/yk/view/Documentquery.java" afterPath="$PROJECT_DIR$/src/com/yk/view/Documentquery.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/yk/view/Compositequery.java" afterPath="$PROJECT_DIR$/src/com/yk/view/Compositequery.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java" afterPath="$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/yk/view/test.java" afterPath="$PROJECT_DIR$/src/com/yk/view/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,13 +71,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Mail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/yk/view/Mail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compositequery.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/yk/view/Compositequery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#queryTable#0;class#Compositequery#0" expanded="false" />
+                <element signature="method#queryTree#0;class#Compositequery#0" expanded="false" />
+                <element signature="method#IsValue#0;class#Compositequery#0" expanded="false" />
+                <element signature="method#tableValue#0;class#Compositequery#0" expanded="false" />
+                <marker date="1552618360896" expanded="false" signature="3826:6839" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1552618360896" expanded="false" signature="6851:7250" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/yk/view/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <folding>
+                <marker date="1552633514251" expanded="false" signature="516:2068" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1552633514251" expanded="false" signature="2080:2389" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Documentmanagement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2985">
-              <caret line="228" column="47" lean-forward="false" selection-start-line="228" selection-start-column="47" selection-end-line="228" selection-end-column="47" />
+            <state relative-caret-position="30">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="19" />
               <folding>
-                <element signature="method#main#0;class#Documentmanagement#0" expanded="false" />
                 <element signature="method#SignoutActionPerformed#0;class#Documentmanagement#0" expanded="false" />
                 <element signature="method#DnewaddActionPerformed#0;class#Documentmanagement#0" expanded="false" />
                 <element signature="method#DqueryActionPerformed#0;class#Documentmanagement#0" expanded="false" />
@@ -85,60 +126,8 @@
                 <element signature="method#menuItem2ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
                 <element signature="method#button1ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
                 <element signature="method#menuItem3ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
-                <marker date="1552294862133" expanded="true" signature="3410:7752" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1552294862133" expanded="true" signature="8307:8960" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Documentquery.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/yk/view/Documentquery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="204" column="50" lean-forward="false" selection-start-line="204" selection-start-column="50" selection-end-line="204" selection-end-column="50" />
-              <folding>
-                <element signature="docComment;class#Documentquery#0" expanded="false" />
-                <element signature="method#initComponents#0;class#Documentquery#0" expanded="false" />
-                <element signature="e#3711#3882#0" expanded="true" />
-                <element signature="e#3881#3882#0" expanded="true" />
-                <element signature="method#ConfirmActionPerformed#0;class#Documentquery#0" expanded="false" />
-                <element signature="method#ConfirmActionEdit#0;class#Documentquery#0" expanded="false" />
-                <element signature="method#ConfirmActionDelete#0;class#Documentquery#0" expanded="false" />
-                <element signature="method#mouseRightButtonClick#0;class#Documentquery#0" expanded="false" />
-                <element signature="docComment;method#initSaveingfiles#0;class#Documentquery#0" expanded="false" />
-                <element signature="method#initSaveingfiles#0;class#Documentquery#0" expanded="false" />
-                <marker date="1552551688198" expanded="false" signature="5758:5982" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="excelImport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yk/business/excelImport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="67" column="17" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2320#2378#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuiVerification.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yk/business/GuiVerification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="110" column="24" lean-forward="false" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#FieldVerification#0;class#GuiVerification#0" expanded="false" />
-                <element signature="method#updateData#0;class#GuiVerification#0" expanded="false" />
-                <element signature="method#nowtime#0;class#GuiVerification#0" expanded="false" />
-                <element signature="e#4693#4701#0" expanded="true" />
-                <element signature="method#getRows#0;class#GuiVerification#0" expanded="false" />
+                <element signature="method#initComponents#0;class#Documentmanagement#0" expanded="false" />
+                <marker date="1552633492076" expanded="true" signature="7922:8575" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
           </provider>
@@ -167,6 +156,8 @@
       <find>getModel</find>
       <find>Column</find>
       <find>XmlTableModel</find>
+      <find>mai</find>
+      <find>mail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/yk/model/DocumentManagement.java" />
         <option value="$PROJECT_DIR$/src/com/yk/business/SqlConfigure.java" />
         <option value="$PROJECT_DIR$/src/com/yk/dao/JDBCUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/yk/view/test.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/FilemanagementMail.jfd" />
         <option value="$PROJECT_DIR$/src/com/yk/view/FilemanagementMail.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/JTabbedPaneDemo.java" />
@@ -195,17 +185,19 @@
         <option value="$PROJECT_DIR$/src/com/yk/view/test2.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/Batchimport.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/Documentmanagement.jfd" />
-        <option value="$PROJECT_DIR$/src/com/yk/view/Compositequery.java" />
         <option value="$PROJECT_DIR$/src/com/yk/dao/DocumentManagementDao.java" />
         <option value="$PROJECT_DIR$/src/com/yk/dao/BaseDao.java" />
-        <option value="$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/Documentadd.java" />
         <option value="$PROJECT_DIR$/../Timer/src/com/company/Yearofday.java" />
         <option value="$PROJECT_DIR$/src/com/yk/model/Column.java" />
         <option value="$PROJECT_DIR$/src/com/yk/model/XmlTableModel.java" />
-        <option value="$PROJECT_DIR$/src/com/yk/business/GuiVerification.java" />
         <option value="$PROJECT_DIR$/src/com/yk/business/excelImport.java" />
         <option value="$PROJECT_DIR$/src/com/yk/view/Documentquery.java" />
+        <option value="$PROJECT_DIR$/src/com/yk/business/GuiVerification.java" />
+        <option value="$PROJECT_DIR$/src/com/yk/view/Compositequery.java" />
+        <option value="$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java" />
+        <option value="$PROJECT_DIR$/src/com/yk/view/Mail.java" />
+        <option value="$PROJECT_DIR$/src/com/yk/view/test.java" />
       </list>
     </option>
   </component>
@@ -268,103 +260,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="yk" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DAGL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yk" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="awt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="awt" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="swing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DAGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="swing" type="462c0819:PsiDirectoryNode" />
-              <item name="filechooser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +306,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Documentmanagement">
+  <component name="RunManager" selected="Application.Mail">
+    <configuration name="All in DAGL" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="DAGL" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -466,14 +391,14 @@
       <module name="DAGL" />
       <envs />
     </configuration>
-    <configuration name="JTabbedPaneDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Mail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.yk.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.yk.view.JTabbedPaneDemo" />
+      <option name="MAIN_CLASS_NAME" value="com.yk.view.Mail" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -497,25 +422,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.yk.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.yk.view.test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DAGL" />
       <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -579,19 +485,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Compositequery" />
-      <item index="2" class="java.lang.String" itemvalue="Application.JTabbedPaneDemo" />
-      <item index="3" class="java.lang.String" itemvalue="Application.FilemanagementMail" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Documentmanagement" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Compositequery" />
+      <item index="1" class="java.lang.String" itemvalue="Application.FilemanagementMail" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Documentmanagement" />
+      <item index="3" class="java.lang.String" itemvalue="Android JUnit.All in DAGL" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Mail" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Documentmanagement" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Compositequery" />
-        <item index="2" class="java.lang.String" itemvalue="Application.FilemanagementMail" />
-        <item index="3" class="java.lang.String" itemvalue="Application.JTabbedPaneDemo" />
-        <item index="4" class="java.lang.String" itemvalue="Application.test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Mail" />
+        <item index="1" class="java.lang.String" itemvalue="Android JUnit.All in DAGL" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Documentmanagement" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Compositequery" />
+        <item index="4" class="java.lang.String" itemvalue="Application.FilemanagementMail" />
       </list>
     </recent_temporary>
   </component>
@@ -642,7 +548,10 @@
       <workItem from="1551838982843" duration="17311000" />
       <workItem from="1552274123361" duration="35000" />
       <workItem from="1552285472457" duration="9149000" />
-      <workItem from="1552542082878" duration="10161000" />
+      <workItem from="1552542082878" duration="10216000" />
+      <workItem from="1552611886399" duration="1588000" />
+      <workItem from="1552632620778" duration="578000" />
+      <workItem from="1552633243993" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="公司电脑2019.3.11 17:27">
       <created>1552296475527</created>
@@ -651,37 +560,49 @@
       <option name="project" value="LOCAL" />
       <updated>1552296475527</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="公司电脑2019.3.14 17:27">
+      <created>1552555889544</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552555889544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_DAGL - 2019.03.15 at 15h 03m 04s.xml">
+      <configuration name="All in DAGL" configurationId="AndroidJUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182209000" />
+    <option name="totallyTimeSpent" value="184758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.4755102" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32746956" sideWeight="0.4755102" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26522326" sideWeight="0.18125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26522326" sideWeight="0.81875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26522326" sideWeight="0.81875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.198125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.198125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991881" sideWeight="0.495625" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JFormDesigner Error Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -705,7 +626,9 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="公司电脑2019.3.11 17:27" />
-    <option name="LAST_COMMIT_MESSAGE" value="公司电脑2019.3.11 17:27" />
+    <MESSAGE value="公司电脑2019.3.14 17:27" />
+    <MESSAGE value="公司电脑2019.3.15 15:27" />
+    <option name="LAST_COMMIT_MESSAGE" value="公司电脑2019.3.15 15:27" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,7 +639,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yk/view/Compositequery.java</url>
-          <line>309</line>
+          <line>302</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -729,8 +652,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/yk/view/view/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/yk/view/view/Documentadd.jfd" />
     <entry file="file://$PROJECT_DIR$/src/com/yk/view/view/FilemanagementMail.jfd" />
     <entry file="file://$PROJECT_DIR$/src/com/yk/view/view/test.jfd" />
     <entry file="file://$PROJECT_DIR$/src/com/yk/view/view/test2.jfd" />
@@ -756,13 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="4127" column="18" lean-forward="false" selection-start-line="4127" selection-start-column="18" selection-end-line="4127" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/view/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -872,31 +786,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/view/Compositequery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Compositequery#0;class#Compositequery#0" expanded="false" />
-            <element signature="method#queryTable#0;class#Compositequery#0" expanded="false" />
-            <element signature="method#queryTree#0;class#Compositequery#0" expanded="false" />
-            <element signature="method#IsValue#0;class#Compositequery#0" expanded="false" />
-            <element signature="method#tableValue#0;class#Compositequery#0" expanded="false" />
-            <marker date="1552287361273" expanded="false" signature="3826:6839" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1552287361273" expanded="false" signature="6851:7250" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/lang/Throwable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="632" column="16" lean-forward="false" selection-start-line="632" selection-start-column="16" selection-end-line="632" selection-end-column="16" />
-          <folding>
-            <element signature="e#26222#26223#0" expanded="false" />
-            <element signature="e#26265#26266#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -911,9 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-188">
           <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-          <folding>
-            <element signature="method#getSetter#0;class#BaseDao#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3862">
           <caret line="274" column="28" lean-forward="false" selection-start-line="274" selection-start-column="28" selection-end-line="274" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,10 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="240" column="81" lean-forward="false" selection-start-line="240" selection-start-column="62" selection-end-line="240" selection-end-column="81" />
-          <folding>
-            <marker date="1551402135478" expanded="false" signature="2956:7524" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1551402135478" expanded="false" signature="7536:8184" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -978,16 +862,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-368">
           <caret line="1451" column="16" lean-forward="false" selection-start-line="1451" selection-start-column="16" selection-end-line="1451" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/javax/swing/filechooser/FileNameExtensionFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="73" column="62" lean-forward="false" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/io/FileOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1522">
+          <caret line="99" column="11" lean-forward="false" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TimePeriodcalCulation/src/com/yk/business/excelImport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="177" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yk/model/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TimePeriodcalCulation/src/com/yk/business/BusinessLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yk/model/XmlTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yk/business/excelImport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="67" column="17" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yk/view/Documentquery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Documentquery#0" expanded="false" />
+            <element signature="method#initComponents#0;class#Documentquery#0" expanded="false" />
+            <element signature="e#6756#6757#0" expanded="false" />
+            <element signature="e#6806#6807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yk/business/GuiVerification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="79" column="60" lean-forward="false" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
+          <folding>
+            <element signature="method#FieldVerification#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#queryTableModel#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#GetModel#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#updateData#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#nowtime#0;class#GuiVerification#0" expanded="false" />
+            <element signature="docComment;method#getModel#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#getModel#0;class#GuiVerification#0" expanded="false" />
+            <element signature="docComment;method#getDocument#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#getDocument#0;class#GuiVerification#0" expanded="false" />
+            <element signature="docComment;method#getRows#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#getRows#0;class#GuiVerification#0" expanded="false" />
+            <element signature="docComment;method#getTDValue#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#getTDValue#0;class#GuiVerification#0" expanded="false" />
+            <element signature="method#selectTabel#0;class#GuiVerification#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35971">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yk/view/Documentmanagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2985">
-          <caret line="228" column="47" lean-forward="false" selection-start-line="228" selection-start-column="47" selection-end-line="228" selection-end-column="47" />
+        <state relative-caret-position="30">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="19" />
           <folding>
-            <element signature="method#main#0;class#Documentmanagement#0" expanded="false" />
             <element signature="method#SignoutActionPerformed#0;class#Documentmanagement#0" expanded="false" />
             <element signature="method#DnewaddActionPerformed#0;class#Documentmanagement#0" expanded="false" />
             <element signature="method#DqueryActionPerformed#0;class#Documentmanagement#0" expanded="false" />
@@ -996,106 +971,43 @@
             <element signature="method#menuItem2ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
             <element signature="method#button1ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
             <element signature="method#menuItem3ActionPerformed#0;class#Documentmanagement#0" expanded="false" />
-            <marker date="1552294862133" expanded="true" signature="3410:7752" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1552294862133" expanded="true" signature="8307:8960" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <element signature="method#initComponents#0;class#Documentmanagement#0" expanded="false" />
+            <marker date="1552633492076" expanded="true" signature="7922:8575" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/javax/swing/filechooser/FileNameExtensionFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yk/view/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="73" column="62" lean-forward="false" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1522">
-          <caret line="99" column="11" lean-forward="false" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TimePeriodcalCulation/src/com/yk/business/excelImport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2670">
-          <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="177" selection-end-column="5" />
+        <state relative-caret-position="222">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1552633514251" expanded="false" signature="516:2068" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1552633514251" expanded="false" signature="2080:2389" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/model/Column.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yk/view/Mail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TimePeriodcalCulation/src/com/yk/business/BusinessLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yk/view/Compositequery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="36" />
-          <folding>
-            <element signature="docComment;method#getModel#0;class#BusinessLogic#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/model/XmlTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/business/GuiVerification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="110" column="24" lean-forward="false" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+        <state relative-caret-position="157">
+          <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#FieldVerification#0;class#GuiVerification#0" expanded="false" />
-            <element signature="method#updateData#0;class#GuiVerification#0" expanded="false" />
-            <element signature="method#nowtime#0;class#GuiVerification#0" expanded="false" />
-            <element signature="e#4693#4701#0" expanded="true" />
-            <element signature="method#getRows#0;class#GuiVerification#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/business/excelImport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="67" column="17" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2320#2378#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yk/view/Documentquery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="204" column="50" lean-forward="false" selection-start-line="204" selection-start-column="50" selection-end-line="204" selection-end-column="50" />
-          <folding>
-            <element signature="docComment;class#Documentquery#0" expanded="false" />
-            <element signature="method#initComponents#0;class#Documentquery#0" expanded="false" />
-            <element signature="e#3711#3882#0" expanded="true" />
-            <element signature="e#3881#3882#0" expanded="true" />
-            <element signature="method#ConfirmActionPerformed#0;class#Documentquery#0" expanded="false" />
-            <element signature="method#ConfirmActionEdit#0;class#Documentquery#0" expanded="false" />
-            <element signature="method#ConfirmActionDelete#0;class#Documentquery#0" expanded="false" />
-            <element signature="method#mouseRightButtonClick#0;class#Documentquery#0" expanded="false" />
-            <element signature="docComment;method#initSaveingfiles#0;class#Documentquery#0" expanded="false" />
-            <element signature="method#initSaveingfiles#0;class#Documentquery#0" expanded="false" />
-            <marker date="1552551688198" expanded="false" signature="5758:5982" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <element signature="method#queryTable#0;class#Compositequery#0" expanded="false" />
+            <element signature="method#queryTree#0;class#Compositequery#0" expanded="false" />
+            <element signature="method#IsValue#0;class#Compositequery#0" expanded="false" />
+            <element signature="method#tableValue#0;class#Compositequery#0" expanded="false" />
+            <marker date="1552618360896" expanded="false" signature="3826:6839" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1552618360896" expanded="false" signature="6851:7250" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>

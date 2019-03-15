@@ -194,11 +194,10 @@ public class GuiVerification {
         return value;
     }
 
-    //返回list
+    //返回DefaultTableModel
 
     public DefaultTableModel selectTabel(int[] row, JTable table){
         Object[][] data=new Object[row.length][9];
-
         for (int i=0;i<row.length;i++){
             data[i][0]=table.getValueAt(row[i],0);
             data[i][1]=table.getValueAt(row[i],1);
@@ -210,7 +209,6 @@ public class GuiVerification {
             data[i][7]=table.getValueAt(row[i],7);
             data[i][8]=table.getValueAt(row[i],8);
         }
-
         DefaultTableModel tableModel=new DefaultTableModel(data,getHead());
         return tableModel;
     }

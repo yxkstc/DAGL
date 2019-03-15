@@ -1,7 +1,6 @@
 /*
  * Created by JFormDesigner on Mon Nov 26 21:29:55 CST 2018
  */
-
 package com.yk.view;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
@@ -20,16 +19,6 @@ public class Documentmanagement extends JFrame {
         initComponents();
     }
 
-    public static void main(String[] args) {
-        Documentmanagement DT=new Documentmanagement();
-        //按屏幕分辨率最大化
-        //DT.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        //屏幕最大化，显示windows任务栏
-        DT.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        DT.setDefaultCloseOperation(3);
-        DT.setLocationRelativeTo(null);
-        DT.setVisible(true);
-    }
     //退出
     private void SignoutActionPerformed(ActionEvent e) {
         // TODO add your code here

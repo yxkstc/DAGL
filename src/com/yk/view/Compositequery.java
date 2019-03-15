@@ -197,13 +197,6 @@ public class Compositequery extends JFrame {
     private JButton Cancel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
-    public static void main(String[] args) {
-        Compositequery t=new Compositequery();
-        t.setSize(631,458);
-        t.setDefaultCloseOperation(3);
-        t.setLocationRelativeTo(null);
-        t.setVisible(true);
-    }
 
     //初始化查询表
     public Object[][] queryTable(){

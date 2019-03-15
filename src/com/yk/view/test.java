@@ -66,8 +66,4 @@ public class test extends JPanel {
     private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
-    public static void main(String[] args) {
-        JFrame jf=new JFrame();
-
-    }
 }
