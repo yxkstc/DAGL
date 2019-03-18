@@ -48,7 +48,8 @@ public class excelImport {
             dm.setTitle(row.getCell(3));
             //execl数字取值为float类型，截取.号之前的值
             dm.setThenumberofpages(row.getCell(4).toString().substring(0,row.getCell(4).toString().indexOf(".")).trim());
-            dm.setArchivalyear(row.getCell(5).toString().substring(0,row.getCell(5).toString().indexOf(".")).trim());
+            //dm.setThenumberofpages(row.getCell(4).toString());
+            dm.setArchivalyear(row.getCell(5).toString());
             dm.setStorageposition(row.getCell(6));
             dm.setRemarks(row.getCell(7));
             dm.setCreatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
