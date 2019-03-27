@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import javax.swing.*;
 import javax.swing.table.TableModel;
 
 /**
@@ -42,16 +43,39 @@ public class excelImport {
         for (int i = 3; i <rowCount; i++) {
             row=sheet.getRow(i);
             com.yk.model.DocumentManagement dm=new com.yk.model.DocumentManagement();
-            dm.setDocumentcoding(row.getCell(0));
-            dm.setPersonliable(row.getCell(1));
-            dm.setTheme(row.getCell(2));
-            dm.setTitle(row.getCell(3));
+            String row0=row.getCell(0)==null?"":row.getCell(0).toString();
+            String row1=row.getCell(1)==null?"":row.getCell(1).toString();
+            String row2=row.getCell(2)==null?"":row.getCell(2).toString();
+            String row3=row.getCell(3)==null?"":row.getCell(3).toString();
+            String row4=row.getCell(4)==null?"":row.getCell(4).toString();
+            String row5=row.getCell(5)==null?"":row.getCell(5).toString();
+            String row6=row.getCell(6)==null?"":row.getCell(6).toString();
+            String row7=row.getCell(7)==null?"":row.getCell(7).toString();
+            String subrow4;
+            String subrow5;
+            if (row4.trim().length()>0){
+                subrow4=row4.substring(row4.trim().length()-2,row4.trim().length()).equals(".0")?row4.substring(0,row4.indexOf(".")):row4;
+            }else {
+                subrow4=row4;
+            }
+            if (row5.length()>0){
+                subrow5=row5.substring(row5.trim().length()-2,row5.trim().length()).equals(".0")?row5.substring(0,row5.indexOf(".")):row5;
+            }else {
+                subrow5=row5;
+            }
+            dm.setDocumentcoding(row0);
+            dm.setPersonliable(row1);
+            dm.setTheme(row2);
+            dm.setTitle(row3);
+            dm.setThenumberofpages(subrow4);
             //execl数字取值为float类型，截取.号之前的值
-            dm.setThenumberofpages(row.getCell(4).toString().substring(0,row.getCell(4).toString().indexOf(".")).trim());
-            //dm.setThenumberofpages(row.getCell(4).toString());
-            dm.setArchivalyear(row.getCell(5).toString());
-            dm.setStorageposition(row.getCell(6));
-            dm.setRemarks(row.getCell(7));
+            //String row_archivalyear= row.getCell(5).toString().length()>;
+            //String s=row_archivalyear.substring(0,row_archivalyear.indexOf(".")).trim();
+            //System.out.println(row.getCell(5));
+            dm.setArchivalyear(subrow5);
+            //dm.setArchivalyear(row.getCell(5).toString());
+            dm.setStorageposition(row6);
+            dm.setRemarks(row7);
             dm.setCreatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
             list.add(dm);
         }

@@ -21,7 +21,7 @@ public class SqlConfigure {
         p.setProperty("Login", Login);
         p.setProperty("PassWord", PassWord);
 
-        fw = new FileWriter("lib/SqlConfigure .properties");
+        fw = new FileWriter("lib/SqlConfigure.properties");
         p.store(fw, "DataBase connection");//将Properties中的信息存储到文件中
     }
 
@@ -31,7 +31,7 @@ public class SqlConfigure {
     public static Properties getGetProperties() throws IOException {
         Properties p = new Properties( );
         FileReader fr;
-        fr = new FileReader("lib/SqlConfigure .properties");
+        fr = new FileReader("lib/SqlConfigure.properties");
         p.load(fr);//load()方法可通过字符流直接加载文件
         return p;
     }

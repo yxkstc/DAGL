@@ -121,7 +121,7 @@ public class Documentquery extends JPanel {
         // TODO add your code here
         Compositequery cq=new Compositequery();
         cq.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        cq.setDefaultCloseOperation(3);
+        cq.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         cq.setLocationRelativeTo(null);
         cq.setVisible(true);
     }

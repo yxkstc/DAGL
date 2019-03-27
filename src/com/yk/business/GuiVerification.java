@@ -75,20 +75,20 @@ public class GuiVerification {
             list.add(DM);
         }
         return list;
-   }
+    }
     //批量修改
     public DocumentManagement updateData(JTable table,int i){
-            DocumentManagement DM=new DocumentManagement();
-            DM.setDocumentcoding(table.getValueAt(i,0));
-            DM.setPersonliable(table.getValueAt(i,1));
-            DM.setTheme(table.getValueAt(i,2));
-            DM.setTitle(table.getValueAt(i,3));
-            DM.setThenumberofpages(table.getValueAt(i,4));
-            DM.setArchivalyear(table.getValueAt(i,5));
-            DM.setStorageposition(table.getValueAt(i,6));
-            DM.setRemarks(table.getValueAt(i,7));
-            DM.setCreatetime(table.getValueAt(i,8));
-            return DM;
+        DocumentManagement DM=new DocumentManagement();
+        DM.setDocumentcoding(table.getValueAt(i,0));
+        DM.setPersonliable(table.getValueAt(i,1));
+        DM.setTheme(table.getValueAt(i,2));
+        DM.setTitle(table.getValueAt(i,3));
+        DM.setThenumberofpages(table.getValueAt(i,4));
+        DM.setArchivalyear(table.getValueAt(i,5));
+        DM.setStorageposition(table.getValueAt(i,6));
+        DM.setRemarks(table.getValueAt(i,7));
+        DM.setCreatetime(table.getValueAt(i,8));
+        return DM;
     }
 
     //获取当前时间
@@ -217,6 +217,5 @@ public class GuiVerification {
     public static  final String[] getHead(){
         return new String[]{"档案号","责任人","主题","题名","页数","日期","存储位置","备注","创建时间"};
     }
-
 
 }
