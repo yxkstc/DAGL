@@ -1,6 +1,6 @@
 package com.yk.business;
 
-import com.yk.dao.DocumentManagementDao;
+
 import com.yk.model.Column;
 import com.yk.model.DocumentManagement;
 import com.yk.model.XmlTableModel;
@@ -12,7 +12,6 @@ import org.dom4j.io.SAXReader;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -38,7 +37,7 @@ public class GuiVerification {
             data[i][0]=list.get(i).getDocumentcoding();
             data[i][1]=list.get(i).getPersonliable();
             data[i][2]=list.get(i).getTheme();
-            data[i][3]=list.get(i).getTitle();
+            data[i][3]=list.get(i).getDocumentType();
             data[i][4]=list.get(i).getThenumberofpages();
             data[i][5]=list.get(i).getArchivalyear();
             data[i][6]=list.get(i).getStorageposition();
@@ -58,7 +57,7 @@ public class GuiVerification {
         };
         return tableModel;
     }
-
+    //文档管理list封装
     public  List<DocumentManagement>  GetModel(JTable table){
         List<DocumentManagement> list = new ArrayList<>();
         for (int i=0;i<table.getRowCount();i++){
@@ -66,7 +65,7 @@ public class GuiVerification {
             DM.setDocumentcoding(table.getValueAt(i,0));
             DM.setPersonliable(table.getValueAt(i,1));
             DM.setTheme(table.getValueAt(i,2));
-            DM.setTitle(table.getValueAt(i,3));
+            DM.setDocumentType(table.getValueAt(i,3));
             DM.setThenumberofpages(table.getValueAt(i,4));
             DM.setArchivalyear(table.getValueAt(i,5));
             DM.setStorageposition(table.getValueAt(i,6));
@@ -76,13 +75,13 @@ public class GuiVerification {
         }
         return list;
     }
-    //批量修改
+    //文档管理批量修改
     public DocumentManagement updateData(JTable table,int i){
         DocumentManagement DM=new DocumentManagement();
         DM.setDocumentcoding(table.getValueAt(i,0));
         DM.setPersonliable(table.getValueAt(i,1));
         DM.setTheme(table.getValueAt(i,2));
-        DM.setTitle(table.getValueAt(i,3));
+        DM.setDocumentType(table.getValueAt(i,3));
         DM.setThenumberofpages(table.getValueAt(i,4));
         DM.setArchivalyear(table.getValueAt(i,5));
         DM.setStorageposition(table.getValueAt(i,6));
@@ -195,7 +194,6 @@ public class GuiVerification {
     }
 
     //返回DefaultTableModel
-
     public DefaultTableModel selectTabel(int[] row, JTable table){
         Object[][] data=new Object[row.length][9];
         for (int i=0;i<row.length;i++){
@@ -214,8 +212,8 @@ public class GuiVerification {
     }
 
     //档案表头
-    public static  final String[] getHead(){
-        return new String[]{"档案号","责任人","主题","题名","页数","日期","存储位置","备注","创建时间"};
+    private static String[] getHead(){
+        return new String[]{"档案号","责任人","主题","档案类别","页数","日期","存储位置","备注","创建时间"};
     }
 
 }

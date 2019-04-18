@@ -2,6 +2,10 @@ package com.yk.model;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;
+/**
+ * names 列
+ * rows 行
+ * */
 
 public class XmlTableModel extends AbstractTableModel {
 

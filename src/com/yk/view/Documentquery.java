@@ -24,12 +24,15 @@ import javax.swing.table.DefaultTableModel;
  * @author 档案查询
  */
 public class Documentquery extends JPanel {
+    public Documentquery(){
+        initComponents();
+    }
 
-    public JPanel initComponents() {
-        JPanel jp=new JPanel();
+    public  void initComponents() {
         Bquery = new JButton();
         Bedit = new JButton();
         Bdelete=new JButton();
+        Fupload=new JButton();
         m_popupMenu = new JPopupMenu();
         exportAllMenItem = new JMenuItem();
         exportMenItem = new JMenuItem();
@@ -47,11 +50,11 @@ public class Documentquery extends JPanel {
         Archivesquery = new JTable();
         GridBagConstraints gbc;
 
-        jp.setLayout(new GridBagLayout());
-        ((GridBagLayout)jp.getLayout()).columnWidths = new int[] {0, 0, 0, 289, 0};
-        ((GridBagLayout)jp.getLayout()).rowHeights = new int[] {42, 0, 0, 0, 0};
-        ((GridBagLayout)jp.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0, 1.0E-4};
-        ((GridBagLayout)jp.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0, 1.0E-4};
+        this.setLayout(new GridBagLayout());
+        ((GridBagLayout)this.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 289,0};
+        ((GridBagLayout)this.getLayout()).rowHeights = new int[] {42, 0, 0, 0, 0, 0};
+        ((GridBagLayout)this.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0, 1.0E-4};
+        ((GridBagLayout)this.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0, 1.0E-4};
 
         Bquery.setText("\u67e5\u8be2"); //NON-NLS
         Bquery.setFont(new Font("宋体",Font.PLAIN, 15));
@@ -60,9 +63,9 @@ public class Documentquery extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets.bottom = 5;
-        gbc.insets.right = 5;
-        jp.add(Bquery, gbc);
+        gbc.insets.bottom = 3;
+        gbc.insets.right = 3;
+        this.add(Bquery, gbc);
 
         Bedit.setText("修改");
         Bedit.setFont(new Font("宋体",Font.PLAIN, 15));
@@ -71,38 +74,49 @@ public class Documentquery extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridx = 1;
         gbc.gridy = 0;
-        gbc.insets.bottom = 5;
-        gbc.insets.right = 5;
-        jp.add(Bedit, gbc);
+        gbc.insets.bottom = 3;
+        gbc.insets.right = 3;
+        this.add(Bedit, gbc);
+
+        Fupload.setText("附件管理");
+        Fupload.setFont(new Font("宋体",Font.PLAIN, 15));
+        Fupload.addActionListener(e -> ConfirmActionFupload(e));
+        gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.insets.bottom = 3;
+        gbc.insets.right = 3;
+        this.add(Fupload, gbc);
 
         Bdelete.setText("删除");
         Bdelete.setFont(new Font("宋体",Font.PLAIN, 15));
         Bdelete.addActionListener(e -> ConfirmActionDelete(e));
         gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.gridx = 2;
+        gbc.gridx = 3;
         gbc.gridy = 0;
-        gbc.insets.bottom = 5;
-        gbc.insets.right = 5;
-        jp.add(Bdelete, gbc);
+        gbc.insets.bottom = 3;
+        gbc.insets.right = 3;
+        this.add(Bdelete, gbc);
 
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.gridwidth = 4;
+        gbc.gridwidth = 5;
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets.bottom = 5;
-        jp.add(separator1, gbc);
+        gbc.insets.bottom = 3;
+        this.add(separator1, gbc);
 
         Archivesquery.setFont(new Font("宋体", Font.PLAIN, 15)); //NON-NLS
         scrollPane1.setViewportView(Archivesquery);
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 4;
+        gbc.gridy = 2;
+        gbc.gridwidth = 5;
         gbc.gridheight = 3;
         gbc.fill = GridBagConstraints.BOTH;
-        jp.add(scrollPane1, gbc);
+        this.add(scrollPane1, gbc);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
         //增加右键菜单
         Archivesquery.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,10 +125,8 @@ public class Documentquery extends JPanel {
                 //jTable1MouseClicked(evt);
             }
         });
-        jp.setName("档案查询");
+        this.setName("档案查询");
         setArchivesquery(GuiVerification.queryTableModel(new DocumentManagementDao().getAll()));
-
-        return jp;
     }
     //查询面板
     private void ConfirmActionPerformed(ActionEvent e) {
@@ -129,11 +141,16 @@ public class Documentquery extends JPanel {
     //批量修改
     private void ConfirmActionEdit(ActionEvent e){
         //Archivesquery.getRowCount();
+
         try {
             int rows[]=Archivesquery.getSelectedRows();
             if (Archivesquery.getSelectedRow() == -1) {
                 JOptionPane.showMessageDialog(null,"请选中需要修改的数据");
             }else {
+                if (Archivesquery.isEditing()){//如果table在编辑中，取消table编辑状态，防止正在编辑数据没有被修改
+                    Archivesquery.getCellEditor().stopCellEditing();
+                }
+
                 for(int i=0;i<rows.length;i++){
                     DocumentManagementDao dd =new DocumentManagementDao();
                     dd.update(new GuiVerification().updateData(Archivesquery,rows[i]));
@@ -148,6 +165,20 @@ public class Documentquery extends JPanel {
         }
 
     }
+
+    //附件管理
+    private void ConfirmActionFupload(ActionEvent e){
+        //Archivesquery.getRowCount();
+        if(Archivesquery.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(null,"请选中需要上传附件的数据");
+        }else {
+            EnclosureManager cq=new EnclosureManager(Archivesquery.getValueAt(Archivesquery.getSelectedRow(),0).toString());
+            cq.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            cq.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            cq.setLocationRelativeTo(null);
+            cq.setVisible(true);
+        }
+      }
 
     //删除
     private void ConfirmActionDelete(ActionEvent e){
@@ -178,6 +209,7 @@ public class Documentquery extends JPanel {
     private JButton Bquery;
     private JButton Bedit;
     private JButton Bdelete;
+    private JButton Fupload;//附件管理
     private static JTable Archivesquery;
     private JPopupMenu m_popupMenu;
     private JMenuItem exportAllMenItem;

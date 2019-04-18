@@ -3,11 +3,9 @@
  */
 package com.yk.view;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Map;
 import javax.swing.*;
 
 /**
@@ -29,15 +27,15 @@ public class Documentmanagement extends JFrame {
     //新增
     private void DnewaddActionPerformed(ActionEvent e) {
         // TODO add your code here
-           JPanel JL= new Documentadd().initComponents();
+        JPanel JL= new Documentadd();
 
-            for (int i=0;i<tablePanemail.getTabCount();i++){
-                if (tablePanemail.getComponentAt(i).getName().equals(
-                        JL.getName())) {
-                    tablePanemail.setSelectedIndex(i);
-                    return;
-                }
+        for (int i=0;i<tablePanemail.getTabCount();i++){
+            if (tablePanemail.getComponentAt(i).getName().equals(
+                    JL.getName())) {
+                tablePanemail.setSelectedIndex(i);
+                return;
             }
+        }
         tablePanemail.addTab(JL.getName(), JL);
         tablePanemail.setSelectedComponent(JL);
 
@@ -46,14 +44,14 @@ public class Documentmanagement extends JFrame {
     //查询
     private void DqueryActionPerformed(ActionEvent e) {
         // TODO add your code here
-        JPanel JL=new Documentquery().initComponents();
-            for (int i=0;i<tablePanemail.getTabCount();i++){
-                if (tablePanemail.getComponentAt(i).getName().equals(
-                        JL.getName())) {
-                    tablePanemail.setSelectedIndex(i);
-                    return;
-                }
+        JPanel JL=new Documentquery();
+        for (int i=0;i<tablePanemail.getTabCount();i++){
+            if (tablePanemail.getComponentAt(i).getName().equals(
+                    JL.getName())) {
+                tablePanemail.setSelectedIndex(i);
+                return;
             }
+        }
         tablePanemail.addTab(JL.getName(), JL);
         tablePanemail.setSelectedComponent(JL);
 
@@ -61,14 +59,14 @@ public class Documentmanagement extends JFrame {
     //EXECL批量导入
     private void BatchimportActionPerformed(ActionEvent e) {
         // TODO add your code here
-        JPanel JL=new Batchimport().initComponents();
-            for (int i=0;i<tablePanemail.getTabCount();i++){
-                if (tablePanemail.getComponentAt(i).getName().equals(
-                        JL.getName())){
-                    tablePanemail.setSelectedIndex(i);
-                    return;
-                }
+        JPanel JL=new Batchimport();
+        for (int i=0;i<tablePanemail.getTabCount();i++){
+            if (tablePanemail.getComponentAt(i).getName().equals(
+                    JL.getName())){
+                tablePanemail.setSelectedIndex(i);
+                return;
             }
+        }
         tablePanemail.addTab(JL.getName(), JL);
         tablePanemail.setSelectedComponent(JL);
     }
@@ -98,11 +96,32 @@ public class Documentmanagement extends JFrame {
         // TODO add your code here
     }
 
+    private void menuItem4ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+    //档案类别管理
+    private void DocumentTypeActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        JPanel JL= new DADocumentTypeManager();
+
+        for (int i=0;i<tablePanemail.getTabCount();i++){
+            if (tablePanemail.getComponentAt(i).getName().equals(
+                    JL.getName())) {
+                tablePanemail.setSelectedIndex(i);
+                return;
+            }
+        }
+        tablePanemail.addTab(JL.getName(), JL);
+        tablePanemail.setSelectedComponent(JL);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         SystemmenuKJ = new JMenuBar();
         SystemmenuM = new JMenu();
         Signout = new JMenuItem();
+        menu3 = new JMenu();
+        DocumentType = new JMenuItem();
         Dmanagement = new JMenu();
         Dnewadd = new JMenuItem();
         Dquery = new JMenuItem();
@@ -114,9 +133,9 @@ public class Documentmanagement extends JFrame {
         menu1 = new JMenu();
         menuItem1 = new JMenuItem();
         menuItem2 = new JMenuItem();
+        menuItem4 = new JMenuItem();
         button1 = new JButton();
         tablePanemail = new JTabbedPane();
-        GridBagConstraints gbc;
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new GridBagLayout());
@@ -127,10 +146,10 @@ public class Documentmanagement extends JFrame {
 
 
         SystemmenuM.setText("\u7cfb\u7edf\u83dc\u5355"); //NON-NLS
-        SystemmenuM.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        SystemmenuM.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
 
         Signout.setText("\u9000\u51fa"); //NON-NLS
-        Signout.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Signout.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Signout.addActionListener(e -> {
 			SignoutActionPerformed(e);
 			SignoutActionPerformed(e);
@@ -138,30 +157,38 @@ public class Documentmanagement extends JFrame {
         SystemmenuM.add(Signout);
         SystemmenuKJ.add(SystemmenuM);
 
+        menu3.setText("\u57fa\u7840\u8d44\u6599"); //NON-NLS
+        menu3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
+
+        DocumentType.setText("\u6863\u6848\u7c7b\u522b"); //NON-NLS
+        DocumentType.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
+        DocumentType.addActionListener(e -> DocumentTypeActionPerformed(e));
+        menu3.add(DocumentType);
+        SystemmenuKJ.add(menu3);
+
         Dmanagement.setText("\u6587\u6863\u7ba1\u7406"); //NON-NLS
-        Dmanagement.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dmanagement.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
 
         Dnewadd.setText("\u65b0\u589e"); //NON-NLS
-        Dnewadd.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dnewadd.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Dnewadd.addActionListener(e -> DnewaddActionPerformed(e));
         Dmanagement.add(Dnewadd);
 
         Dquery.setText("\u67e5\u8be2"); //NON-NLS
-        Dquery.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dquery.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Dquery.addActionListener(e -> DqueryActionPerformed(e));
         Dmanagement.add(Dquery);
 
         Batchimport.setText("EXECL\u5bfc\u5165"); //NON-NLS
-        Batchimport.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Batchimport.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Batchimport.addActionListener(e -> BatchimportActionPerformed(e));
         Dmanagement.add(Batchimport);
         SystemmenuKJ.add(Dmanagement);
 
         menu2.setText("\u6587\u6863\u501f\u9605"); //NON-NLS
-        menu2.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        menu2.setFont(new Font("Microsoft YaHei UI", menu2.getFont().getStyle(), menu2.getFont().getSize())); //NON-NLS
 
         menuItem3.setText("\u501f\u9605\u67e5\u8be2"); //NON-NLS
-        menuItem3.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
         menuItem3.addActionListener(e -> menuItem3ActionPerformed(e));
         menu2.add(menuItem3);
         SystemmenuKJ.add(menu2);
@@ -170,41 +197,47 @@ public class Documentmanagement extends JFrame {
         menuBar1.add(hSpacer1);
 
         menu1.setText("\u529f\u80fd"); //NON-NLS
-        menu1.setFont(new Font("宋体", Font.PLAIN, 15));
+
         menuItem1.setText("\u5355\u4e2a\u5173\u95ed"); //NON-NLS
-        menuItem1.setFont(new Font("宋体", Font.PLAIN, 15));
         menuItem1.addActionListener(e -> menuItem1ActionPerformed(e));
         menu1.add(menuItem1);
 
         menuItem2.setText("\u5168\u90e8\u5173\u95ed"); //NON-NLS
-        menuItem2.setFont(new Font("宋体", Font.PLAIN, 15));
         menuItem2.addActionListener(e -> menuItem2ActionPerformed(e));
         menu1.add(menuItem2);
+
+        menuItem4.setText("\u9644\u4ef6\u7ba1\u7406"); //NON-NLS
+        menuItem4.addActionListener(e -> menuItem4ActionPerformed(e));
+        menu1.add(menuItem4);
         menuBar1.add(menu1);
 
         button1.addActionListener(e -> button1ActionPerformed(e));
         menuBar1.add(button1);
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets.bottom = 5;
-        contentPane.add(menuBar1, gbc);
+        contentPane.add(menuBar1, new GridBagConstraints(0, 0, 3, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 0), 0, 0));
 
-        tablePanemail.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 3;
-        gbc.gridheight = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets.bottom = 5;
-        contentPane.add(tablePanemail, gbc);
-
+        tablePanemail.setFont(new Font("\u5b8b\u4f53", Font.PLAIN, 20)); //NON-NLS
+        contentPane.add(tablePanemail, new GridBagConstraints(0, 1, 3, 3, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 0), 0, 0));
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+        SystemmenuM.setFont(new Font("宋体", Font.PLAIN, 20));
+        Dmanagement.setFont(new Font("宋体", Font.PLAIN, 20));
+        Signout.setFont(new Font("宋体", Font.PLAIN, 20));
+        Dnewadd.setFont(new Font("宋体", Font.PLAIN, 20));
+        Dquery.setFont(new Font("宋体", Font.PLAIN, 20));
+        Batchimport.setFont(new Font("宋体", Font.PLAIN, 20));
+        menu2.setFont(new Font("宋体", Font.PLAIN, 20));
+        menuItem3.setFont(new Font("宋体", Font.PLAIN, 20));
+        menu1.setFont(new Font("宋体", Font.PLAIN, 15));
+        menuItem1.setFont(new Font("宋体", Font.PLAIN, 15));
+        menuItem2.setFont(new Font("宋体", Font.PLAIN, 15));
+        tablePanemail.setFont(new Font("宋体", Font.PLAIN, 20));
+        menu3.setFont(new Font("宋体", Font.PLAIN, 20));
+        DocumentType.setFont(new Font("宋体", Font.PLAIN, 20));
         ImageIcon image=new ImageIcon("Icon/close.jpg");
         int width=20;//设置图标及按钮宽度
         int height=20;//设置图标及按钮高度
@@ -222,6 +255,8 @@ public class Documentmanagement extends JFrame {
     private JMenuBar SystemmenuKJ;
     private JMenu SystemmenuM;
     private JMenuItem Signout;
+    private JMenu menu3;
+    private JMenuItem DocumentType;
     private JMenu Dmanagement;
     private JMenuItem Dnewadd;
     private JMenuItem Dquery;
@@ -233,6 +268,7 @@ public class Documentmanagement extends JFrame {
     private JMenu menu1;
     private JMenuItem menuItem1;
     private JMenuItem menuItem2;
+    private JMenuItem menuItem4;
     private JButton button1;
     private JTabbedPane tablePanemail;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

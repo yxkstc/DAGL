@@ -4,7 +4,6 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import com.yk.model.DocumentManagement;
@@ -13,9 +12,18 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.swing.*;
 import javax.swing.table.TableModel;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.*;
 /**
  *
  * Title: excelTest
@@ -66,7 +74,7 @@ public class excelImport {
             dm.setDocumentcoding(row0);
             dm.setPersonliable(row1);
             dm.setTheme(row2);
-            dm.setTitle(row3);
+            dm.setDocumentType(row3);
             dm.setThenumberofpages(subrow4);
             //execl数字取值为float类型，截取.号之前的值
             //String row_archivalyear= row.getCell(5).toString().length()>;
@@ -129,6 +137,5 @@ public class excelImport {
         workbook.write(fos);//写文件
         fos.close();
     }
-
 
 }

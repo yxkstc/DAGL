@@ -1,12 +1,22 @@
 package com.yk.model;
-
-
+/**
+ * 文档管理
+ * Documentcoding 文档编码
+ * Personliable 责任人
+ * Theme 主题
+ * Title 文件类别
+ * Thenumberofpages 创建时间
+ * Archivalyear 年限
+ * Storageposition 页数
+ * Remarks 备注
+ * Createtime 创建时间
+ * */
 public class DocumentManagement {
 
   private Object Documentcoding;
   private Object Personliable;
   private Object Theme;
-  private Object Title;
+  private Object DocumentType;
   private Object Thenumberofpages;
   private Object Archivalyear;
   private Object Storageposition;
@@ -37,12 +47,12 @@ public class DocumentManagement {
     Theme = theme;
   }
 
-  public Object getTitle() {
-    return Title;
+  public Object getDocumentType() {
+    return DocumentType;
   }
 
-  public void setTitle(Object title) {
-    Title = title;
+  public void setDocumentType(Object documentType) {
+    DocumentType = documentType;
   }
 
   public Object getThenumberofpages() {
@@ -91,7 +101,7 @@ public class DocumentManagement {
             "Documentcoding=" + Documentcoding +
             ", Personliable=" + Personliable +
             ", Theme=" + Theme +
-            ", Title=" + Title +
+            ", DocumentType=" + DocumentType +
             ", Thenumberofpages=" + Thenumberofpages +
             ", Archivalyear=" + Archivalyear +
             ", Storageposition=" + Storageposition +

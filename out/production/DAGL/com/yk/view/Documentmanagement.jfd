@@ -30,6 +30,11 @@ new FormModel {
 						"text": "全部关闭"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem2ActionPerformed", true ) )
 					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem4"
+						"text": "附件管理"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem4ActionPerformed", true ) )
+					} )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button1"
@@ -61,9 +66,20 @@ new FormModel {
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3"
+					"text": "基础资料"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "DocumentType"
+						"text": "档案类别"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DocumentTypeActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "Dmanagement"
 					"text": "文档管理"
-					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 21 )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "Dnewadd"
 						"text": "新增"
@@ -86,7 +102,7 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu2"
 					"text": "文档借阅"
-					"font": new java.awt.Font( "黑体", 0, 21 )
+					"font": new com.jformdesigner.model.SwingDerivedFont( "Microsoft YaHei UI", 0, 0, false )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "menuItem3"
 						"text": "借阅查询"
