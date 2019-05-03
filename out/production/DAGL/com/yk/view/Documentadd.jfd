@@ -65,8 +65,8 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LTheme"
-				"text": "题名"
 				"font": #Font1
+				"text": "主题"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 5
 				"gridx": 2
@@ -80,16 +80,16 @@ new FormModel {
 				"gridwidth": 3
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "LTitle"
-				"text": "文件名"
+				name: "LDocumentType"
+				"text": "档案类别"
 				"font": #Font0
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 7
 				"gridy": 5
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "TTitle"
-				"font": #Font0
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "TDocumentType"
+				addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "TDocumentTypeItemStateChanged", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 8
 				"gridy": 5

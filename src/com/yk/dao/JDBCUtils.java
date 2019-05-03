@@ -33,7 +33,7 @@ public final class JDBCUtils {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException, IOException {
-        Properties p = com.yk.business.SqlConfigure.getGetProperties( );
+        Properties p = com.yk.business.SqlConfigure.getGetProperties();
         String url = "jdbc:sqlserver://" + p.getProperty("IP") + ":" + p.getProperty("Port") + ";databaseName=" + p.getProperty("DataBase") + ";user=" + p.getProperty("Login") + ";password=" + p.getProperty("PassWord") + ";"; //sa身份连接
         return DriverManager.getConnection(url);
     }
@@ -59,9 +59,9 @@ public final class JDBCUtils {
     public static void closeConnection(Connection conn) {
         if (conn != null) {
             try {
-                conn.close( );
+                conn.close();
             } catch (SQLException e) {
-                e.printStackTrace( );
+                e.printStackTrace();
             }
         }
         //等待垃圾回收
@@ -76,9 +76,9 @@ public final class JDBCUtils {
     public static void closeStatement(Statement st) {
         if (st != null) {
             try {
-                st.close( );
+                st.close();
             } catch (SQLException e) {
-                e.printStackTrace( );
+                e.printStackTrace();
             }
         }
         //等待垃圾回收
@@ -93,9 +93,9 @@ public final class JDBCUtils {
     public static void closeResultSet(ResultSet rs) {
         if (rs != null) {
             try {
-                rs.close( );
+                rs.close();
             } catch (SQLException e) {
-                e.printStackTrace( );
+                e.printStackTrace();
             }
         }
         //等待垃圾回收

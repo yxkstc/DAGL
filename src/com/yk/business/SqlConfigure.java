@@ -12,7 +12,7 @@ public class SqlConfigure {
      * Properties类中的setProtertity()方法
      */
     public static void setGetProperties(String IP, String Port, String DataBase, String Login, String PassWord) throws IOException {
-        Properties p = new Properties( );
+        Properties p = new Properties();
         FileWriter fw;
 
         p.setProperty("IP", IP);//设定Properties类中存放的键值对
@@ -29,7 +29,7 @@ public class SqlConfigure {
      * Properties类中的getProtertity()
      */
     public static Properties getGetProperties() throws IOException {
-        Properties p = new Properties( );
+        Properties p = new Properties();
         FileReader fr;
         fr = new FileReader("lib/SqlConfigure.properties");
         p.load(fr);//load()方法可通过字符流直接加载文件

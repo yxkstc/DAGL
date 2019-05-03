@@ -4,21 +4,63 @@
 
 package com.yk.view;
 
-import java.awt.*;
-import java.awt.event.*;
+import com.yk.business.DADocumentTypeBusiness;
+import com.yk.business.hanziZhuanPinyin;
+import com.yk.model.DADocumentType;
+
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * @author Brainrain
  */
 public class DADocumentTypeadd extends JFrame {
-    public DADocumentTypeadd() {
+
+    public static DADocumentTypeadd getInstance() {
+        if (instance == null) {
+            synchronized (DADocumentTypeadd.class) {
+                if (instance == null) {
+                    instance = new DADocumentTypeadd();
+                }
+            }
+        }
+        return instance;
+    }
+
+    DADocumentTypeadd() {
         initComponents();
     }
 
     private void BsaveActionPerformed(ActionEvent e) {
         // TODO add your code here
-        //if (tfTypeNameChinese.getText().length())
+        try {
+            if (tfTypeNameChinese.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "请输入中文名称");
+                return;
+            }
+            int isSave = JOptionPane.showConfirmDialog(null, "确认保存", "提示", JOptionPane.YES_NO_OPTION);
+            if (isSave == JOptionPane.YES_NO_OPTION) {
+                tfTypeNameEnglish.setText(hanziZhuanPinyin.ToFirstChar(tfTypeNameChinese.getText()));
+                tfCreatetime.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
+                tfState.setText("1");//1为启用，2为禁用
+                DADocumentType dt = new DADocumentType();
+                dt.setTypeNameEnglish(tfTypeNameEnglish.getText());
+                dt.setTypeNameChinese(tfTypeNameChinese.getText());
+                dt.setState(tfState.getText());
+                dt.setCreatetime(tfCreatetime.getText());
+                DADocumentTypeBusiness.insertDG(dt);//写入数据库
+                JOptionPane.showMessageDialog(null, "保存成功");
+                DADocumentTypeManager.setTpyetable(DADocumentTypeBusiness.queryTableModelQiYong());//刷新数据
+                dispose();
+                instance = null;//关闭当前窗口
+            }
+        } catch (Exception e1) {
+            JOptionPane.showMessageDialog(null, e1.getMessage());
+        }
+
     }
 
     private void BCloseActionPerformed(ActionEvent e) {
@@ -42,10 +84,10 @@ public class DADocumentTypeadd extends JFrame {
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new GridBagLayout());
-        ((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {0, 0, 43, 90, 0, 125, 0};
-        ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
-        ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-        ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+        ((GridBagLayout) contentPane.getLayout()).columnWidths = new int[]{0, 0, 43, 90, 0, 125, 0};
+        ((GridBagLayout) contentPane.getLayout()).rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
+        ((GridBagLayout) contentPane.getLayout()).columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+        ((GridBagLayout) contentPane.getLayout()).rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
         Bsave.setText("\u4fdd\u5b58"); //NON-NLS
         Bsave.addActionListener(e -> BsaveActionPerformed(e));
@@ -145,7 +187,7 @@ public class DADocumentTypeadd extends JFrame {
         tfState.setFont(new Font("宋体", Font.PLAIN, 15));
         lbCreatetime.setFont(new Font("宋体", Font.PLAIN, 15));
         tfCreatetime.setFont(new Font("宋体", Font.PLAIN, 15));
-        Color c = new Color(0,0,0,255);//背影颜色随便设任意值,只起占位作用。
+        Color c = new Color(0, 0, 0, 255);//背影颜色随便设任意值,只起占位作用。
         Bsave.setBackground(c);
         Bsave.setOpaque(false);//设置透明
         Bsave.setBorderPainted(false);//不绘制边框
@@ -166,4 +208,5 @@ public class DADocumentTypeadd extends JFrame {
     private JLabel lbCreatetime;
     private JTextField tfCreatetime;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    private static DADocumentTypeadd instance;
 }

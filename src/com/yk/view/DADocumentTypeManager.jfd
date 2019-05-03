@@ -1,0 +1,82 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "59, 62, 55, left:123, 121:1.0, 0:1.0"
+			"$rowSpecs": "0, 0, 0:1.0"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "insert"
+					"text": "新增"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "insertActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "update"
+					"text": "修改"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updateActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "qiyong"
+					"text": "启用"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "qiyongActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "prohibituse"
+					"text": "禁用"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "prohibituseActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "state"
+					addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "stateItemStateChanged", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "query"
+					"text": "查询"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "queryActionPerformed", true ) )
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer5"
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer6"
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer4"
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer3"
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer2"
+				} )
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer1"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridwidth": 6
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tpyetable"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"gridwidth": 6
+				"gridheight": 2
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

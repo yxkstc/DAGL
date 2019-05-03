@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Mail {
     public static void main(String[] args) {
-        Documentmanagement DT=new Documentmanagement();
+        Documentmanagement DT = Documentmanagement.getInstance();
         //按屏幕分辨率最大化
         //DT.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         //屏幕最大化，显示windows任务栏
