@@ -47,6 +47,7 @@ public class Compositequery extends JFrame {
         c1.addItem(tree2.getPathForRow(6).getPathComponent(1));
         c1.addItem(tree2.getPathForRow(7).getPathComponent(1));
         c1.addItem(tree2.getPathForRow(8).getPathComponent(1));
+        c1.addItem(tree2.getPathForRow(9).getPathComponent(1));
         table1.getColumnModel().getColumn(1)
                 .setCellEditor(new DefaultCellEditor(c1));
 
@@ -228,7 +229,7 @@ public class Compositequery extends JFrame {
         DefaultMutableTreeNode Documentcoding = new DefaultMutableTreeNode("文档编码");
         DefaultMutableTreeNode Personliable = new DefaultMutableTreeNode("责任人");
         DefaultMutableTreeNode Theme = new DefaultMutableTreeNode("主题");
-        DefaultMutableTreeNode Title = new DefaultMutableTreeNode("档案类别");
+        DefaultMutableTreeNode DocumentType = new DefaultMutableTreeNode("档案类别");
         DefaultMutableTreeNode Thenumberofpages = new DefaultMutableTreeNode("页数");
         DefaultMutableTreeNode Archivalyear = new DefaultMutableTreeNode("归档年");
         DefaultMutableTreeNode Storageposition = new DefaultMutableTreeNode("存储位置");
@@ -238,14 +239,12 @@ public class Compositequery extends JFrame {
         treeModel.insertNodeInto(Documentcoding, root, root.getChildCount());
         treeModel.insertNodeInto(Personliable, root, root.getChildCount());
         treeModel.insertNodeInto(Theme, root, root.getChildCount());
-        treeModel.insertNodeInto(Title, root, root.getChildCount());
+        treeModel.insertNodeInto(DocumentType, root, root.getChildCount());
         treeModel.insertNodeInto(Thenumberofpages, root, root.getChildCount());
         treeModel.insertNodeInto(Archivalyear, root, root.getChildCount());
         treeModel.insertNodeInto(Storageposition, root, root.getChildCount());
         treeModel.insertNodeInto(Remarks, root, root.getChildCount());
         treeModel.insertNodeInto(Createtime, root, root.getChildCount());
-
-
         return treeModel;
     }
 
@@ -263,8 +262,8 @@ public class Compositequery extends JFrame {
             case "主题":
                 value = "Theme";
                 break;
-            case "文件名称":
-                value = "Title";
+            case "档案类别":
+                value = "DocumentType";
                 break;
             case "页数":
                 value = "Thenumberofpages";
@@ -277,6 +276,9 @@ public class Compositequery extends JFrame {
                 break;
             case "备注":
                 value = "Remarks";
+                break;
+            case "创建时间":
+                value = "Createtime";
                 break;
             case "等于":
                 value = "=";

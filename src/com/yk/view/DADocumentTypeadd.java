@@ -52,15 +52,14 @@ public class DADocumentTypeadd extends JFrame {
                 dt.setState(tfState.getText());
                 dt.setCreatetime(tfCreatetime.getText());
                 DADocumentTypeBusiness.insertDG(dt);//写入数据库
-                JOptionPane.showMessageDialog(null, "保存成功");
                 DADocumentTypeManager.setTpyetable(DADocumentTypeBusiness.queryTableModelQiYong());//刷新数据
                 dispose();
+                JOptionPane.showMessageDialog(null, "保存成功");
                 instance = null;//关闭当前窗口
             }
         } catch (Exception e1) {
             JOptionPane.showMessageDialog(null, e1.getMessage());
         }
-
     }
 
     private void BCloseActionPerformed(ActionEvent e) {
