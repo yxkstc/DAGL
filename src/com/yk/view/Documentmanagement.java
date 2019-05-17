@@ -16,8 +16,7 @@ public class Documentmanagement extends JFrame {
     Documentmanagement() {
         initComponents();
     }
-
-    public static Documentmanagement getInstance() {
+    public static Documentmanagement getInstance(){
         if (instance == null) {
             synchronized (Documentmanagement.class) {
                 if (instance == null) {
@@ -26,8 +25,9 @@ public class Documentmanagement extends JFrame {
             }
         }
         return instance;
-    }
 
+
+    }
     //退出
     private void SignoutActionPerformed(ActionEvent e) {
         // TODO add your code here
@@ -186,7 +186,6 @@ public class Documentmanagement extends JFrame {
         Signout.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
         Signout.addActionListener(e -> {
             SignoutActionPerformed(e);
-            SignoutActionPerformed(e);
         });
         SystemmenuM.add(Signout);
         SystemmenuKJ.add(SystemmenuM);
@@ -283,6 +282,7 @@ public class Documentmanagement extends JFrame {
         button1.setOpaque(false);//设置透明
         //button1.setContentAreaFilled(false);//不绘制按钮区域
         button1.setBorderPainted(false);//不绘制边框
+        this.setResizable(false);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables

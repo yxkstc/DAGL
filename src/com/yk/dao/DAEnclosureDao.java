@@ -21,7 +21,7 @@ public class DAEnclosureDao extends BaseDao {
 
     // 新增附件内容（二进制）
     public void update(byte[] paramsValue, String EnclosureID) {
-        String sql = "update DAEnclosure set EnclosureContent=? where EnclosureID=EnclosureID";
+        String sql = "update DAEnclosure set EnclosureContent=? where EnclosureID="+EnclosureID+"";
         super.update(sql, paramsValue);
     }
 

@@ -219,7 +219,7 @@ public class EnclosureManager extends JDialog {
     }
 
     /**
-     * @initUploadingfiles 初始化上传事件，获取选择文件路径
+     * @initUploadingfiles 初始化下载事件，获取选择文件路径
      */
     private String initdownloadfiles(String defaultDisk) {
         String path = null;

@@ -45,7 +45,7 @@ public class Documentquery extends JPanel {
         m_popupMenu = new JPopupMenu();
         exportAllMenItem = new JMenuItem();
         exportMenItem = new JMenuItem();
-        chooser = new JFileChooser();
+        downloadchooser = new JFileChooser();
         m_popupMenu.setFont(new Font("宋体", Font.PLAIN, 15));
         exportAllMenItem.setText("全部导出execl");
         exportAllMenItem.setFont(new Font("宋体", Font.PLAIN, 15));
@@ -226,7 +226,7 @@ public class Documentquery extends JPanel {
     private JPopupMenu m_popupMenu;
     private JMenuItem exportAllMenItem;
     private JMenuItem exportMenItem;
-    private JFileChooser chooser;
+    private JFileChooser downloadchooser;
     private static Documentquery instance;
 
     //查询面板反写JTable值
@@ -239,11 +239,12 @@ public class Documentquery extends JPanel {
         //导出全部
         exportAllMenItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {//该操作需要做的事
+                String path=initSaveingfiles();
                 //文件路径为空，不做任何操作
-                if (initSaveingfiles() == null) return;//此代码防止点击关闭报文件路径错误
+                if (path == null) return;//此代码防止点击关闭报文件路径错误
                 try {
                     //调用导出功能
-                    new excelImport().writeExcel(initSaveingfiles(), Archivesquery.getModel());
+                    new excelImport().writeExcel(path, Archivesquery.getModel());
                     JOptionPane.showMessageDialog(null, "导出成功");
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
@@ -253,12 +254,13 @@ public class Documentquery extends JPanel {
         //导出选中
         exportMenItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {//该操作需要做的事
+                String path=initSaveingfiles();
                 //文件路径为空，不做任何操作
-                if (initSaveingfiles() == null) return;//此代码防止点击关闭报文件路径错误
+                if (path == null) return;//此代码防止点击关闭报文件路径错误
                 try {
                     //调用导出功能
                     int rows[] = Archivesquery.getSelectedRows();
-                    new excelImport().writeExcel(initSaveingfiles(), DocumentBusiness.selectTabel(rows, Archivesquery));
+                    new excelImport().writeExcel(path, DocumentBusiness.selectTabel(rows, Archivesquery));
                     JOptionPane.showMessageDialog(null, "导出成功");
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
@@ -301,13 +303,13 @@ public class Documentquery extends JPanel {
         String path = null;
         String defaultDisk = "档案管理" + GuiVerification.nowtime() + ".xls";
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel 97-2003文件", "xls");
-        chooser.setDialogTitle("请选择要保存的路径...");
-        chooser.setApproveButtonText("保存");
-        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//只能选文件夹
-        chooser.setSelectedFile(new File(defaultDisk));//设置默认文件名
-        chooser.setFileFilter(filter);//设置文件类型
-        if (JFileChooser.FILES_ONLY == chooser.showSaveDialog(this)) {
-            path = chooser.getSelectedFile().getPath();
+        downloadchooser.setDialogTitle("请选择要保存的路径...");
+        downloadchooser.setApproveButtonText("保存");
+        downloadchooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//只能选文件夹
+        downloadchooser.setSelectedFile(new File(defaultDisk));//设置默认文件名
+        downloadchooser.setFileFilter(filter);//设置文件类型
+        if (JFileChooser.APPROVE_OPTION == downloadchooser.showSaveDialog(this)) {
+            path = downloadchooser.getSelectedFile().getPath();
         }
         return path;
     }

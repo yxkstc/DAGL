@@ -15,14 +15,13 @@ public class Base64Enclosure {
             bo.close();
             oo.close();
         } catch (Exception e) {
-            System.out.println("translation" + e.getMessage());
             e.printStackTrace();
         }
         return (bytes);
     }
 
     /**
-     * 将文件转成base64 字符串
+     * 将文件转成字节
      *
      * @param path 文件路径
      * @return *
@@ -49,7 +48,7 @@ public class Base64Enclosure {
     }
 
     /**
-     * 将base64字符解码保存文件
+     * 将字节解码保存文件
      *
      * @param byteFile
      * @param targetPath
@@ -58,9 +57,8 @@ public class Base64Enclosure {
 
     public static void decoderByteFile(byte[] byteFile, String targetPath) {
         try {
-            byte[] buffer = byteFile;
             FileOutputStream out = new FileOutputStream(targetPath);
-            out.write(buffer);
+            out.write(byteFile);
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
