@@ -115,7 +115,7 @@ public class Compositequery extends JFrame {
             Dlysql = "1=1";
         }
         this.dispose();
-        Documentquery.setArchivesquery(DocumentBusiness.queryTableModelZH(Dlysql));
+        Documentquery.setArchivesquery(DocumentBusiness.queryTableModelZH(Dlysql));//刷新档案查询视图
     }
 
     //取消事件

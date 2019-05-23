@@ -81,6 +81,8 @@ public class Documentadd extends JPanel {
                 DM.setCreatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
                 DocumentBusiness.insertDcoument(DM);
                 JOptionPane.showMessageDialog(null, "保存成功");
+                TDocumentcoding.setText(DADocumentTypeBusiness.saveQueryCode(TDocumentcoding.getText()));//自动计算档案编码
+                Documentquery.setArchivesquery(DocumentBusiness.queryTableModel());//刷新档案查询视图
             }
 
         } catch (Exception e1) {
@@ -96,7 +98,7 @@ public class Documentadd extends JPanel {
         TStorageposition.setText("");
         TRemarks.setText("");
     }
-
+    //档案类别下拉菜单自动生成档案编码
     private void TDocumentTypeItemStateChanged(ItemEvent e) {
         // TODO add your code here
         TDocumentcoding.setText(DADocumentTypeBusiness.queryCode(TDocumentType.getSelectedItem().toString()));

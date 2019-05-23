@@ -50,7 +50,7 @@ public class DocumentManagementDao extends BaseDao {
 
     //按档案类别查询对应编码最大值
     public String tpyeCodeQuery(String code) {
-        String sql = "select top 1 Documentcoding from DocumentManagement where DocumentType like 'code%' order by Documentcoding Desc";
+        String sql = "select top 1 Documentcoding from DocumentManagement where Documentcoding like '"+code+"%' order by Documentcoding Desc";
         List<DocumentManagement> list = super.query(sql, null, DocumentManagement.class);
         return list.size() == 0 ? "0" : list.get(0).getDocumentcoding().toString();
     }

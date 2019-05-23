@@ -132,7 +132,7 @@ public class DADocumentTypeBusiness {
         return dbm;
     }
 
-    //档案新增，档案类别英文名自动编码
+    //选择档案类别英文名自动编码
     public static String queryCode(String code) {
         String dlyCode;
         String TpyeCode = documentCode(code);
@@ -145,8 +145,22 @@ public class DADocumentTypeBusiness {
         } else {
             count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
             count += 1;
-            dlyCode = TpyeCode + "-" + GuiVerification.nowTimeYear() + count;
+            TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+            dlyCode = TpyeCode + count;
         }
+        return dlyCode;
+    }
+
+    //保存档案编码自动新增
+    public static String saveQueryCode(String code) {
+        String dlyCode;
+        code=code.substring(0,code.indexOf("-"));
+        String TpyeCode = documentCode(code);
+        int count = 0;
+        count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
+        count += 1;
+        TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+        dlyCode = TpyeCode + count;
         return dlyCode;
     }
 
