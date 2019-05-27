@@ -23,20 +23,49 @@ public class DocumentBusiness {
         String tpyeName = tjb.getTypeNameChinese();
         Object[][] data = DocumentData(list);
         String TpyeCode = documentCode(code);
+        String dlyCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+        int error=0;
         int count = 0;
+        //查询数据库类别编码数值
+        if(!TpyeCode.equals("0")){
+            count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
+        }
+
         if (!code.equals("MBBM")) {
             for (int i = 0; i < list.size(); i++) {
                 if (TpyeCode.equals("0")) {
-                    data[i][0] = code + "-" + GuiVerification.nowTimeYear() + "-" + (i + 1);
-                } else {
-                    count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
-                    count += 1;
-                    data[i][0] = TpyeCode + "-" + GuiVerification.nowTimeYear() + count;
+                    if (i<9){
+                        data[i][0] = code + "-" + GuiVerification.nowTimeYear() + "-" +"00"+ (i + 1);
+                    }else if(i<99){
+                        data[i][0] = code + "-" + GuiVerification.nowTimeYear() + "-" +"0"+ (i + 1);
+                    }else if(i<999) {
+                        data[i][0] = code + "-" + GuiVerification.nowTimeYear() + "-" + (i + 1);
+                    }else {
+                        data[i][0]=code + "-" + GuiVerification.nowTimeYear() + "-" + 999;
+                        error=1;
+                    }
+                }else {
+                    count++;
+                    if(count<10){
+                        data[i][0] = dlyCode + "00"+count;
+                    } else if(count < 100){
+                        data[i][0] = dlyCode + "0"+count;
+                    }else if (count < 1000){
+                        data[i][0] = dlyCode +count;
+                    }else{
+                        data[i][0]=dlyCode+999;
+                        error=1;
+                    }
                 }
                 data[i][3] = tpyeName;
             }
 
         }
+        if (error==1){
+            JOptionPane.showMessageDialog(null,"单个档案类别编码一年内最大编码已超过999,请重新选择档案类别");
+            data=null;
+        }
+
         DefaultTableModel tableModel = new DefaultTableModel(data, getHead()) {//设置第一列不能编辑
             @Override
             public boolean isCellEditable(int row, int column) {

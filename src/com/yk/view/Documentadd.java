@@ -8,6 +8,7 @@ import com.yk.business.DADocumentTypeBusiness;
 import com.yk.business.DocumentBusiness;
 import com.yk.business.GuiVerification;
 import com.yk.model.DocumentManagement;
+import com.yk.model.TypeNameJComboBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -81,11 +82,12 @@ public class Documentadd extends JPanel {
                 DM.setCreatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
                 DocumentBusiness.insertDcoument(DM);
                 JOptionPane.showMessageDialog(null, "保存成功");
-                TDocumentcoding.setText(DADocumentTypeBusiness.saveQueryCode(TDocumentcoding.getText()));//自动计算档案编码
-                Documentquery.setArchivesquery(DocumentBusiness.queryTableModel());//刷新档案查询视图
+                TypeNameJComboBox dbm=(TypeNameJComboBox)TDocumentType.getSelectedItem();
+                TDocumentcoding.setText(DADocumentTypeBusiness.queryCode(dbm.getTypeNameEnglish()));//自动计算档案编码
+                Documentquery.getInstance().setArchivesquery(DocumentBusiness.queryTableModel());//刷新档案查询视图
             }
-
         } catch (Exception e1) {
+            e1.printStackTrace();
             JOptionPane.showMessageDialog(null, e1.getMessage());
         }
     }
@@ -101,7 +103,8 @@ public class Documentadd extends JPanel {
     //档案类别下拉菜单自动生成档案编码
     private void TDocumentTypeItemStateChanged(ItemEvent e) {
         // TODO add your code here
-        TDocumentcoding.setText(DADocumentTypeBusiness.queryCode(TDocumentType.getSelectedItem().toString()));
+        TypeNameJComboBox dbm=(TypeNameJComboBox)TDocumentType.getSelectedItem();
+        TDocumentcoding.setText(DADocumentTypeBusiness.queryCode(dbm.getTypeNameEnglish()));
     }
 
 

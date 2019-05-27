@@ -132,38 +132,36 @@ public class DADocumentTypeBusiness {
         return dbm;
     }
 
-    //选择档案类别英文名自动编码
+    //选择档案类别英文名自动编码,单个
     public static String queryCode(String code) {
-        String dlyCode;
+        String dlyCode="";
         String TpyeCode = documentCode(code);
         int count = 0;
-        if (code.equals("模板编码")) {
+        if (code.equals("MBBM")) {//模板编码
             return "";
         }
         if (TpyeCode.equals("0")) {
-            dlyCode = code + "-" + GuiVerification.nowTimeYear() + "-" + 1;
+            dlyCode = code + "-" + GuiVerification.nowTimeYear() + "-" + "00"+1;
         } else {
             count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
             count += 1;
-            TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
-            dlyCode = TpyeCode + count;
+            if(count<10){
+                TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+                dlyCode = TpyeCode + "00"+count;
+            } else if(count < 100){
+                TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+                dlyCode = TpyeCode + "0"+count;
+            }else if (count < 1000){
+                TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
+                dlyCode = TpyeCode +count;
+            }else{
+                JOptionPane.showMessageDialog(null,"单个档案类别编码一年内最大编码已超过999,请重新选择档案类别");
+                dlyCode=TpyeCode+999;
+            }
+
         }
         return dlyCode;
     }
-
-    //保存档案编码自动新增
-    public static String saveQueryCode(String code) {
-        String dlyCode;
-        code=code.substring(0,code.indexOf("-"));
-        String TpyeCode = documentCode(code);
-        int count = 0;
-        count = Integer.valueOf(TpyeCode.substring(TpyeCode.lastIndexOf("-") + 1, TpyeCode.length()).trim());
-        count += 1;
-        TpyeCode=TpyeCode.substring(0,TpyeCode.lastIndexOf("-")+1);
-        dlyCode = TpyeCode + count;
-        return dlyCode;
-    }
-
     //档案新增，单个
     public static void insertDG(DADocumentType da) {
         new DADocumentTypeDao().insert(da);

@@ -98,8 +98,7 @@ public class GuiVerification {
     private List<Column> getComumns(Document doc) {
         ArrayList<Column> list = new ArrayList<Column>();
         Element root = doc.getRootElement();
-        Iterator<Element> el = root.element("columns")
-                .elementIterator("column");
+        Iterator<Element> el = root.element("columns").elementIterator("column");
         while (el.hasNext()) {
             Element e = (Element) el.next();
             Column c = new Column(e.attributeValue("name"), e
