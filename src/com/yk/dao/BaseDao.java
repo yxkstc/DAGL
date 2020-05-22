@@ -199,6 +199,34 @@ public class BaseDao {
         return Enclosure;
     }
 
+    /**
+     * 查询附件ID
+     */
+    public int queryEnclosureID(String sql, String EnclosureCode) {
+        int EnclosureID=0;
+        try {
+            // query-1. 获取连接
+            con = JDBCUtils.getConnection();
+            // query-2. 创建stmt对象
+            pstmt = con.prepareStatement(sql);
+            pstmt.setObject(1, EnclosureCode);
+
+            // query-3. 执行查询
+            rs = pstmt.executeQuery();
+            // query-4. 获取结果集元数据
+            while (rs.next()) {
+                EnclosureID = rs.getInt(1);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.colseResource(con, pstmt, rs);
+        }
+        return EnclosureID;
+    }
+
 /**
  * END
  * */

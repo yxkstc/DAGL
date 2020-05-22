@@ -12,7 +12,7 @@ public class DAEnclosureDao extends BaseDao {
         super.update(sql, paramsValue);
     }
 
-    // 新增附件信息（除附件内容）
+    // 新增附件信息（除附件文件）
     public void insert(DAEnclosure de) {
         String sql = "insert into DAEnclosure (EnclosureCode,EnclosureName,Createtime) values (?,?,?)";
         Object[] paramsValue = {de.getEnclosureCode(), de.getEnclosureName(), de.getCreatetime()};
@@ -28,8 +28,7 @@ public class DAEnclosureDao extends BaseDao {
     // 查询附件名称
     public String getQueryEnclosureName(String EnclosureID) {
         String sql = "select EnclosureName from DAEnclosure where EnclosureID=?";
-        String EnclosureName = super.queryEnclosureName(sql, EnclosureID);
-        return EnclosureName;
+        return super.queryEnclosureName(sql, EnclosureID);
     }
 
     // 查询附件内容
@@ -44,6 +43,12 @@ public class DAEnclosureDao extends BaseDao {
         String sql = "select EnclosureID,EnclosureCode,EnclosureName,Createtime from DAEnclosure where EnclosureCode=? order by Createtime desc";
         List<DAEnclosure> list = super.query(sql, new Object[]{enclosureCode}, DAEnclosure.class);
         return list;
+    }
+
+    // 查询全部
+    public int getEnclosureID(String enclosureCode) {
+        String sql = "select top 1 EnclosureID from DAEnclosure where EnclosureCode=? order by Createtime desc";
+        return super.queryEnclosureID(sql,enclosureCode);
     }
 
 }

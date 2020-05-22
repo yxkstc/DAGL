@@ -148,6 +148,25 @@ public class Documentmanagement extends JFrame {
             JOptionPane.showMessageDialog(null, e1.getMessage());
         }
     }
+    //附件批量导入
+    private void PldaoruActionPerformed(ActionEvent e) {
+        // TODO add your code here
+
+        try {
+            JPanel JL = BatchImportOfAttachments.getInstance();
+            for (int i = 0; i < tablePanemail.getTabCount(); i++) {
+                if (tablePanemail.getComponentAt(i).getName().equals(
+                        JL.getName())) {
+                    tablePanemail.setSelectedIndex(i);
+                    return;
+                }
+            }
+            tablePanemail.addTab(JL.getName(), JL);
+            tablePanemail.setSelectedComponent(JL);
+        } catch (Exception e1) {
+            JOptionPane.showMessageDialog(null, e1.getMessage());
+        }
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -160,6 +179,7 @@ public class Documentmanagement extends JFrame {
         Dnewadd = new JMenuItem();
         Dquery = new JMenuItem();
         JBatchimport = new JMenuItem();
+        Pldaoru = new JMenuItem();
         menu2 = new JMenu();
         menuItem3 = new JMenuItem();
         menuBar1 = new JMenuBar();
@@ -170,56 +190,62 @@ public class Documentmanagement extends JFrame {
         menuItem4 = new JMenuItem();
         button1 = new JButton();
         tablePanemail = new JTabbedPane();
+        GridBagConstraints gbc;
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new GridBagLayout());
-        ((GridBagLayout) contentPane.getLayout()).columnWidths = new int[]{0, 0, 712, 0};
-        ((GridBagLayout) contentPane.getLayout()).rowHeights = new int[]{22, 0, 0, 300, 0, 0};
-        ((GridBagLayout) contentPane.getLayout()).columnWeights = new double[]{0.0, 0.0, 1.0, 1.0E-4};
-        ((GridBagLayout) contentPane.getLayout()).rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0E-4};
+        ((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {0, 0, 712, 0};
+        ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {22, 0, 0, 300, 0, 0};
+        ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 1.0, 1.0E-4};
+        ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0, 0.0, 1.0E-4};
 
 
         SystemmenuM.setText("\u7cfb\u7edf\u83dc\u5355"); //NON-NLS
-        SystemmenuM.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        SystemmenuM.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
 
         Signout.setText("\u9000\u51fa"); //NON-NLS
-        Signout.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Signout.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Signout.addActionListener(e -> {
-            SignoutActionPerformed(e);
-        });
+			SignoutActionPerformed(e);
+			SignoutActionPerformed(e);
+		});
         SystemmenuM.add(Signout);
         SystemmenuKJ.add(SystemmenuM);
 
         menu3.setText("\u57fa\u7840\u8d44\u6599"); //NON-NLS
-        menu3.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        menu3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
 
         DocumentType.setText("\u6863\u6848\u7c7b\u522b"); //NON-NLS
-        DocumentType.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        DocumentType.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         DocumentType.addActionListener(e -> DocumentTypeActionPerformed(e));
         menu3.add(DocumentType);
         SystemmenuKJ.add(menu3);
 
         Dmanagement.setText("\u6587\u6863\u7ba1\u7406"); //NON-NLS
-        Dmanagement.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dmanagement.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
 
         Dnewadd.setText("\u65b0\u589e"); //NON-NLS
-        Dnewadd.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dnewadd.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Dnewadd.addActionListener(e -> DnewaddActionPerformed(e));
         Dmanagement.add(Dnewadd);
 
         Dquery.setText("\u67e5\u8be2"); //NON-NLS
-        Dquery.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        Dquery.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         Dquery.addActionListener(e -> DqueryActionPerformed(e));
         Dmanagement.add(Dquery);
 
         JBatchimport.setText("EXECL\u5bfc\u5165"); //NON-NLS
-        JBatchimport.setFont(new Font("宋体", Font.PLAIN, 20)); //NON-NLS
+        JBatchimport.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 20)); //NON-NLS
         JBatchimport.addActionListener(e -> BatchimportActionPerformed(e));
         Dmanagement.add(JBatchimport);
+
+        Pldaoru.setText("\u6863\u6848\u9644\u4ef6\u6279\u91cf\u5bfc\u5165"); //NON-NLS
+        Pldaoru.addActionListener(e -> PldaoruActionPerformed(e));
+        Dmanagement.add(Pldaoru);
         SystemmenuKJ.add(Dmanagement);
 
         menu2.setText("\u6587\u6863\u501f\u9605"); //NON-NLS
-        menu2.setFont(new Font("宋体", menu2.getFont().getStyle(), menu2.getFont().getSize())); //NON-NLS
+        menu2.setFont(new Font("Microsoft YaHei UI", menu2.getFont().getStyle(), menu2.getFont().getSize())); //NON-NLS
 
         menuItem3.setText("\u501f\u9605\u67e5\u8be2"); //NON-NLS
         menuItem3.addActionListener(e -> menuItem3ActionPerformed(e));
@@ -246,14 +272,24 @@ public class Documentmanagement extends JFrame {
 
         button1.addActionListener(e -> button1ActionPerformed(e));
         menuBar1.add(button1);
-        contentPane.add(menuBar1, new GridBagConstraints(0, 0, 3, 1, 0.0, 0.0,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                new Insets(0, 0, 5, 0), 0, 0));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 3;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets.bottom = 5;
+        contentPane.add(menuBar1, gbc);
 
         tablePanemail.setFont(new Font("\u5b8b\u4f53", Font.PLAIN, 20)); //NON-NLS
-        contentPane.add(tablePanemail, new GridBagConstraints(0, 1, 3, 3, 0.0, 0.0,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                new Insets(0, 0, 5, 0), 0, 0));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 3;
+        gbc.gridheight = 3;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets.bottom = 5;
+        contentPane.add(tablePanemail, gbc);
+
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -263,6 +299,7 @@ public class Documentmanagement extends JFrame {
         Dnewadd.setFont(new Font("宋体", Font.PLAIN, 20));
         Dquery.setFont(new Font("宋体", Font.PLAIN, 20));
         JBatchimport.setFont(new Font("宋体", Font.PLAIN, 20));
+        Pldaoru.setFont(new Font("宋体", Font.PLAIN, 20));
         menu2.setFont(new Font("宋体", Font.PLAIN, 20));
         menuItem3.setFont(new Font("宋体", Font.PLAIN, 20));
         menu1.setFont(new Font("宋体", Font.PLAIN, 15));
@@ -295,6 +332,7 @@ public class Documentmanagement extends JFrame {
     private JMenuItem Dnewadd;
     private JMenuItem Dquery;
     private JMenuItem JBatchimport;
+    private JMenuItem Pldaoru;
     private JMenu menu2;
     private JMenuItem menuItem3;
     private JMenuBar menuBar1;

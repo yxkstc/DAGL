@@ -38,10 +38,19 @@ public class DAEnclosureBusiness {
     public static void updateEnclosure(byte[] byteFile, String enclosureId) {
         new DAEnclosureDao().update(byteFile, enclosureId);
     }
+    //附件名称查询
+    public static String getEnclosureName(String enclosureId) {
+        return new DAEnclosureDao().getQueryEnclosureName(enclosureId);
+    }
 
     //文档类别批量修改
     public String deleteData(JTable table, int i) {
         return table.getValueAt(i, 0).toString();
+    }
+
+    //附件内容ID
+    public static int queryEnclosureID(String enclosureCode){
+        return new DAEnclosureDao().getEnclosureID(enclosureCode);
     }
 
     //附件表头

@@ -170,6 +170,11 @@ public class DocumentBusiness {
         dd.update(DM);
     }
 
+    //查询档案是否存在
+    public static String getCodeQuery(String code){
+        return new DocumentManagementDao().getCodeQuery(code);
+    }
+
     //档案表头
     private static String[] getHead() {
         return new String[]{"档案号", "责任人", "主题", "档案类别", "页数", "日期", "存储位置", "备注", "创建时间"};

@@ -29,7 +29,7 @@ public class Base64Enclosure {
      */
 
     public static byte[] encodeByteFile(String path) {
-        byte[] buffer = null;
+        byte[] buffer=null;
         try {
             File file = new File(path);
             FileInputStream inputFile = new FileInputStream(file);

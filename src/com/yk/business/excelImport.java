@@ -1,5 +1,6 @@
 package com.yk.business;
 
+import com.yk.model.BatchImportOfAttachmentsModel;
 import com.yk.model.DocumentManagement;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
@@ -26,6 +27,12 @@ import java.util.List;
  * @author pancm
  */
 public class excelImport {
+    /**
+     * 读取Excel，DocumentManagement表格内容
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public static List<DocumentManagement> readExcel(String str) throws FileNotFoundException, IOException {
         File file = new File(str);
         // HSSFWorkbook 2003的excel .xls,XSSFWorkbook导入2007的excel   .xlsx
@@ -82,7 +89,7 @@ public class excelImport {
     }
 
     /**
-     * table写入Excel表格内容
+     * Excel写入DocumentManagement表格内容
      *
      * @throws FileNotFoundException
      * @throws IOException
@@ -93,8 +100,8 @@ public class excelImport {
         //HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
         //XSSFWorkbook workbook=new XSSFWorkbook(new FileInputStream(file));
         //InputStream is = new FileInputStream(file);
-        HSSFWorkbook workbook = new HSSFWorkbook();//定义输出方式为xls2003
-        TableModel savetable = table;//输出数据源（流程超时表）
+        HSSFWorkbook workbook = new HSSFWorkbook();//定义输出方式为execl 2003
+        TableModel savetable = table;//输出数据源（档案文件）
         Sheet sheet1 = workbook.createSheet("sheet1");//创建 sheet1 对象
         Row row = sheet1.createRow(0);//创建sheet1第一行标题对象
         //shee1标题赋值
@@ -108,7 +115,7 @@ public class excelImport {
         row.createCell(7).setCellValue(savetable.getColumnName(7));
         row.createCell(8).setCellValue(savetable.getColumnName(8));
 
-        //数据源（流程超时表）遍历
+        //数据源（档案管理）遍历
         for (int i = 0; i < savetable.getRowCount(); i++) {
             //因为sheet1第一行已经设置了，所以从第二行开始
             row = sheet1.createRow(i + 1);
@@ -122,6 +129,75 @@ public class excelImport {
             row.createCell(6).setCellValue(savetable.getValueAt(i, 6).toString());
             row.createCell(7).setCellValue(savetable.getValueAt(i, 7).toString());
             row.createCell(8).setCellValue(savetable.getValueAt(i, 8).toString());
+        }
+        FileOutputStream fos = new FileOutputStream(str);
+        workbook.write(fos);//写文件
+        fos.close();
+    }
+    /**
+     * 读取Excel，BatchImportOfAttachments表格内容
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public static List<BatchImportOfAttachmentsModel> readExcelBatchImportOfAttachment(String str) throws FileNotFoundException, IOException {
+        File file = new File(str);
+        // HSSFWorkbook 2003的excel .xls,XSSFWorkbook导入2007的excel   .xlsx
+        // HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
+        InputStream is = new FileInputStream(file);
+        XSSFWorkbook workbook = new XSSFWorkbook(is);
+        Sheet sheet = workbook.getSheetAt(0);//读取第一个 sheet
+        List<BatchImportOfAttachmentsModel> list = new ArrayList<>();
+        Row row = null;
+        int rowCount = sheet.getPhysicalNumberOfRows();
+        //逐行处理 excel 数据
+        for (int i = 3; i < rowCount; i++) {
+            row = sheet.getRow(i);
+            BatchImportOfAttachmentsModel bom = new BatchImportOfAttachmentsModel();
+            String row0 = row.getCell(0) == null ? "" : row.getCell(0).toString();
+            String row1 = row.getCell(1) == null ? "" : row.getCell(1).toString();
+            bom.setDocumentcoding(row0);
+            bom.setPath(row1);
+            bom.setState("未上传");
+            bom.setErrorMessage("");
+            list.add(bom);
+        }
+        workbook.close();
+
+        return list;
+    }
+
+    /**
+     * Excel写入BatchImportOfAttachments表格内容
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    @SuppressWarnings({"resource", "rawtypes", "unchecked"})
+    public void writeExcelBatchImportOfAttachment(String str, TableModel table) throws FileNotFoundException, IOException {
+        // HSSFWorkbook 2003的excel .xls,XSSFWorkbook导入2007的excel   .xlsx
+        //HSSFWorkbook workbook=new HSSFWorkbook(new FileInputStream(new File(file)));
+        //XSSFWorkbook workbook=new XSSFWorkbook(new FileInputStream(file));
+        //InputStream is = new FileInputStream(file);
+        HSSFWorkbook workbook = new HSSFWorkbook();//定义输出方式为execl 2003
+        TableModel savetable = table;//输出数据源（附件批量导入）
+        Sheet sheet1 = workbook.createSheet("sheet1");//创建 sheet1 对象
+        Row row = sheet1.createRow(0);//创建sheet1第一行标题对象
+        //shee1标题赋值
+        row.createCell(0).setCellValue(savetable.getColumnName(0));
+        row.createCell(1).setCellValue(savetable.getColumnName(1));
+        row.createCell(2).setCellValue(savetable.getColumnName(2));
+        row.createCell(3).setCellValue(savetable.getColumnName(3));
+
+        //数据源（附件批量导入）遍历
+        for (int i = 0; i < savetable.getRowCount(); i++) {
+            //因为sheet1第一行已经设置了，所以从第二行开始
+            row = sheet1.createRow(i + 1);
+            //写入sheet1行数据
+            row.createCell(0).setCellValue(savetable.getValueAt(i, 0).toString());
+            row.createCell(1).setCellValue(savetable.getValueAt(i, 1).toString());
+            row.createCell(2).setCellValue(savetable.getValueAt(i, 2).toString());
+            row.createCell(3).setCellValue(savetable.getValueAt(i, 3).toString());
         }
         FileOutputStream fos = new FileOutputStream(str);
         workbook.write(fos);//写文件

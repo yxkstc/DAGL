@@ -12,7 +12,7 @@ public class DAEnclosure {
     private Object EnclosureID;
     private Object EnclosureCode;
     private Object EnclosureName;
-    private Object EnclosureContent;
+    private byte[] EnclosureContent;
     private Object Createtime;
 
     public Object getEnclosureID() {
@@ -39,11 +39,11 @@ public class DAEnclosure {
         EnclosureName = enclosureName;
     }
 
-    public Object getEnclosureContent() {
+    public byte[] getEnclosureContent() {
         return EnclosureContent;
     }
 
-    public void setEnclosureContent(Object enclosureContent) {
+    public void setEnclosureContent(byte[] enclosureContent) {
         EnclosureContent = enclosureContent;
     }
 

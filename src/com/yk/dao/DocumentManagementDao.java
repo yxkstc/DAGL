@@ -55,6 +55,13 @@ public class DocumentManagementDao extends BaseDao {
         return list.size() == 0 ? "0" : list.get(0).getDocumentcoding().toString();
     }
 
+    //查询档案是否存在
+    public String getCodeQuery(String code) {
+        String sql = "select top 1 Documentcoding from DocumentManagement where Documentcoding ='"+code+"'";
+        List<DocumentManagement> list = super.query(sql, null, DocumentManagement.class);
+        return list.size() == 0 ? "0" : list.get(0).getDocumentcoding().toString();
+    }
+
     //组合查询
     public List<DocumentManagement> CombinationQuery(String Dlysql) {
         String sql = "select * from DocumentManagement where " + Dlysql;

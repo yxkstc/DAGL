@@ -93,10 +93,15 @@ new FormModel {
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DqueryActionPerformed", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "Batchimport"
+						name: "JBatchimport"
 						"text": "EXECL导入"
 						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "BatchimportActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Pldaoru"
+						"text": "档案附件批量导入"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "PldaoruActionPerformed", true ) )
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
